@@ -6,7 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/harrison/Programming/PhysicsEngine/src/main.cpp
+/mnt/c/Users/harri/Desktop/Programming/PhysicsEngine/src/Test.cpp
+Test.hpp
+/mnt/c/Users/harri/Desktop/Programming/PhysicsEngine/src/Test.hpp
+
+/mnt/c/Users/harri/Desktop/Programming/PhysicsEngine/src/main.cpp
 stdio.h
+-
+Test.hpp
+/mnt/c/Users/harri/Desktop/Programming/PhysicsEngine/src/Test.hpp
+
+include/Test.hpp
+iostream
 -
 

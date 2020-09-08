@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/PhysicsEngine.dir/src/main.cpp.o -o PhysicsEngine 
+/usr/bin/c++     CMakeFiles/PhysicsEngine.dir/src/Test.cpp.o CMakeFiles/PhysicsEngine.dir/src/main.cpp.o  -o PhysicsEngine 
