@@ -10,6 +10,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/harrison/Programming/PhysicsEngine/src/imgui/imgui_impl_glfw.cpp" "/home/harrison/Programming/PhysicsEngine/CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_glfw.cpp.o"
   "/home/harrison/Programming/PhysicsEngine/src/imgui/imgui_impl_opengl3.cpp" "/home/harrison/Programming/PhysicsEngine/CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_opengl3.cpp.o"
   "/home/harrison/Programming/PhysicsEngine/src/imgui/imgui_widgets.cpp" "/home/harrison/Programming/PhysicsEngine/CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_widgets.cpp.o"
+  "/home/harrison/Programming/PhysicsEngine/src/implot/implot.cpp" "/home/harrison/Programming/PhysicsEngine/CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.o"
+  "/home/harrison/Programming/PhysicsEngine/src/implot/implot_demo.cpp" "/home/harrison/Programming/PhysicsEngine/CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.o"
+  "/home/harrison/Programming/PhysicsEngine/src/implot/implot_items.cpp" "/home/harrison/Programming/PhysicsEngine/CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.o"
   "/home/harrison/Programming/PhysicsEngine/src/main.cpp" "/home/harrison/Programming/PhysicsEngine/CMakeFiles/PhysicsEngine.dir/src/main.cpp.o"
   "/home/harrison/Programming/PhysicsEngine/src/tools/Shader.cpp" "/home/harrison/Programming/PhysicsEngine/CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o"
   "/home/harrison/Programming/PhysicsEngine/src/tools/Texture.cpp" "/home/harrison/Programming/PhysicsEngine/CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o"
@@ -20,8 +23,9 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "include"
-  "3rd-party/stb"
   "include/imgui"
+  "include/implot"
+  "include/stb"
   )
 
 # Targets to which this target links.

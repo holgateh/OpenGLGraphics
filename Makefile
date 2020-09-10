@@ -304,6 +304,87 @@ src/imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_widgets.cpp.s
 .PHONY : src/imgui/imgui_widgets.cpp.s
 
+src/implot/implot.o: src/implot/implot.cpp.o
+
+.PHONY : src/implot/implot.o
+
+# target to build an object file
+src/implot/implot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.o
+.PHONY : src/implot/implot.cpp.o
+
+src/implot/implot.i: src/implot/implot.cpp.i
+
+.PHONY : src/implot/implot.i
+
+# target to preprocess a source file
+src/implot/implot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.i
+.PHONY : src/implot/implot.cpp.i
+
+src/implot/implot.s: src/implot/implot.cpp.s
+
+.PHONY : src/implot/implot.s
+
+# target to generate assembly for a file
+src/implot/implot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.s
+.PHONY : src/implot/implot.cpp.s
+
+src/implot/implot_demo.o: src/implot/implot_demo.cpp.o
+
+.PHONY : src/implot/implot_demo.o
+
+# target to build an object file
+src/implot/implot_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.o
+.PHONY : src/implot/implot_demo.cpp.o
+
+src/implot/implot_demo.i: src/implot/implot_demo.cpp.i
+
+.PHONY : src/implot/implot_demo.i
+
+# target to preprocess a source file
+src/implot/implot_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.i
+.PHONY : src/implot/implot_demo.cpp.i
+
+src/implot/implot_demo.s: src/implot/implot_demo.cpp.s
+
+.PHONY : src/implot/implot_demo.s
+
+# target to generate assembly for a file
+src/implot/implot_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.s
+.PHONY : src/implot/implot_demo.cpp.s
+
+src/implot/implot_items.o: src/implot/implot_items.cpp.o
+
+.PHONY : src/implot/implot_items.o
+
+# target to build an object file
+src/implot/implot_items.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.o
+.PHONY : src/implot/implot_items.cpp.o
+
+src/implot/implot_items.i: src/implot/implot_items.cpp.i
+
+.PHONY : src/implot/implot_items.i
+
+# target to preprocess a source file
+src/implot/implot_items.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.i
+.PHONY : src/implot/implot_items.cpp.i
+
+src/implot/implot_items.s: src/implot/implot_items.cpp.s
+
+.PHONY : src/implot/implot_items.s
+
+# target to generate assembly for a file
+src/implot/implot_items.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.s
+.PHONY : src/implot/implot_items.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -439,6 +520,15 @@ help:
 	@echo "... src/imgui/imgui_widgets.o"
 	@echo "... src/imgui/imgui_widgets.i"
 	@echo "... src/imgui/imgui_widgets.s"
+	@echo "... src/implot/implot.o"
+	@echo "... src/implot/implot.i"
+	@echo "... src/implot/implot.s"
+	@echo "... src/implot/implot_demo.o"
+	@echo "... src/implot/implot_demo.i"
+	@echo "... src/implot/implot_demo.s"
+	@echo "... src/implot/implot_items.o"
+	@echo "... src/implot/implot_items.i"
+	@echo "... src/implot/implot_items.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

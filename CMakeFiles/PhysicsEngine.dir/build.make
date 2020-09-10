@@ -154,9 +154,48 @@ CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_widgets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_widgets.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/imgui/imgui_widgets.cpp -o CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_widgets.cpp.s
 
+CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
+CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.o: src/implot/implot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/implot/implot.cpp
+
+CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harrison/Programming/PhysicsEngine/src/implot/implot.cpp > CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.i
+
+CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/implot/implot.cpp -o CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.s
+
+CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
+CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.o: src/implot/implot_demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/implot/implot_demo.cpp
+
+CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harrison/Programming/PhysicsEngine/src/implot/implot_demo.cpp > CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.i
+
+CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/implot/implot_demo.cpp -o CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.s
+
+CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
+CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.o: src/implot/implot_items.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/implot/implot_items.cpp
+
+CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harrison/Programming/PhysicsEngine/src/implot/implot_items.cpp > CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.i
+
+CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/implot/implot_items.cpp -o CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.s
+
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/main.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/main.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.i: cmake_force
@@ -169,7 +208,7 @@ CMakeFiles/PhysicsEngine.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o: src/tools/Shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/tools/Shader.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.i: cmake_force
@@ -182,7 +221,7 @@ CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.s: cmake_force
 
 CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o: src/tools/Texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/tools/Texture.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.i: cmake_force
@@ -195,7 +234,7 @@ CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.s: cmake_force
 
 CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o: src/tools/Timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/tools/Timer.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.i: cmake_force
@@ -214,6 +253,9 @@ PhysicsEngine_OBJECTS = \
 "CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_glfw.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_opengl3.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_widgets.cpp.o" \
+"CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.o" \
+"CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.o" \
+"CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/main.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o" \
@@ -228,6 +270,9 @@ PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_draw.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_glfw.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_opengl3.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_widgets.cpp.o
+PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.o
+PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.o
+PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/main.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o
@@ -235,7 +280,7 @@ PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/build.make
 PhysicsEngine: /usr/lib/libGLEW.so
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable PhysicsEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable PhysicsEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PhysicsEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <thread>
+#include <chrono>
 
 // Include GLEW. Always include it before gl.h and glfw3.h, since it's a bit magic.
 #include <GL/glew.h>
@@ -19,20 +21,53 @@ using namespace glm;
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
+// Implot
+#include "implot.h"
 
 #include <fstream>
 #include <iostream>
 #include <vector>
+#include <queue>
 #include <sstream>
 
 #include <tools/Shader.hpp>
 #include <tools/Texture.hpp>
 #include <tools/Timer.hpp>
+#include <tools/CircularQueue.hpp>
+
+// utility structure for realtime plot
+struct ScrollingBuffer {
+    int MaxSize;
+    int Offset;
+    ImVector<ImVec2> Data;
+    ScrollingBuffer() {
+        MaxSize = 2000;
+        Offset  = 0;
+        Data.reserve(MaxSize);
+    }
+    void AddPoint(float x, float y) {
+        if (Data.size() < MaxSize)
+            Data.push_back(ImVec2(x,y));
+        else {
+            Data[Offset] = ImVec2(x,y);
+            Offset =  (Offset + 1) % MaxSize;
+        }
+    }
+    void Erase() {
+        if (Data.size() > 0) {
+            Data.shrink(0);
+            Offset  = 0;
+        }
+    }
+};
 
 const std::string SHADER_PATH = "data/shaders/";
-Timer t;
-double frameTimeAverage, frameTimeMin = 100.0, frameTimeMax;
+Timer frameTimer, totalTimer;
+double frameTime, totalTime, frameTimeAverage, frameTimeMin = 100.0, frameTimeMax;
 uint32_t frame = 0;
+unsigned int frameCap = 0;
+tools::CircularQueue<double> frameTimes(100);
+tools::CircularQueue<double> timePoints(100);
 
 
 // An array of 3 vectors which represents 3 vertices
@@ -59,7 +94,7 @@ void drawUI()
 {
     // render your GUI
     ImGui::Begin("Performance Statistics");
-    double frameTime = t.elapsedTime();
+
     ImGui::Text(("Frame time: " + std::to_string(frameTime* 1000.0) + "ms" ).c_str());
     frameTimeAverage = frame > 1 ? (frameTimeAverage*(frame - 1) + frameTime)/frame : frameTime;
     ImGui::Text(("Average frame time: " + std::to_string(frameTimeAverage * 1000.0) + "ms" ).c_str());
@@ -67,8 +102,17 @@ void drawUI()
     frameTimeMax = frameTime > frameTimeMax ? frameTime : frameTimeMax;
     ImGui::Text(("Min frame time: " + std::to_string(frameTimeMin * 1000.0) + "ms" ).c_str());
     ImGui::Text(("Max frame time: " + std::to_string(frameTimeMax * 1000.0) + "ms" ).c_str());
+    static ScrollingBuffer sdata1;
+    sdata1.AddPoint(totalTime, frameTime*1000.0);
 
-    t.reset();
+    static float history = 1.0f;
+    ImGui::SliderFloat("History",&history,0.1,5,"%.1f s");
+    ImPlot::SetNextPlotLimitsX(totalTime - history, totalTime, ImGuiCond_Always);
+    ImPlot::SetNextPlotLimitsY(0, frameTimeAverage * 5 * 1000, ImGuiCond_Always);
+    if (ImPlot::BeginPlot("##Scrolling", NULL, NULL, ImVec2(-1,150), 0, ImPlotAxisFlags_NoTickLabels, ImPlotAxisFlags_NoTickLabels | ImPlotAxisFlags_LockMin)) {
+        ImPlot::PlotLine("", &sdata1.Data[0], sdata1.Data.size(), sdata1.Offset);
+        ImPlot::EndPlot();
+    }
     
     ImGui::End();
 
@@ -83,6 +127,7 @@ void initImGui(GLFWwindow* window)
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
+    ImPlot::CreateContext();
     ImGuiIO &io = ImGui::GetIO();
     // Setup Platform/Renderer bindings
     ImGui_ImplGlfw_InitForOpenGL(window, true);
@@ -129,6 +174,7 @@ int main()
         fprintf(stderr, "Failed to initialize GLEW\n");
         return -1;
     }
+    glfwSwapInterval(0);
 
     // Ensure we can capture the escape key being pressed below
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
@@ -198,7 +244,7 @@ int main()
         float timeValue = glfwGetTime();
 
 
-        texture.bind();
+        //texture.bind();
 
         // now render the triangle
 
@@ -212,10 +258,20 @@ int main()
         // swap buffers and poll IO events
         glfwSwapBuffers(window);
         glfwPollEvents();
+        if(frameTimer.elapsedTime() < 1.0/ frameCap)
+        {
+            std::this_thread::sleep_for(std::chrono::duration<double>(1.0 /frameCap - frameTimer.elapsedTime()) );
+        }
+        frameTime = frameTimer.elapsedTime();
+        frameTimer.reset();
+        totalTime = totalTimer.elapsedTime();
 
     } // Check if the ESC key was pressed or the window was closed
     while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
            glfwWindowShouldClose(window) == 0 );
+
+    ImPlot::DestroyContext();
+    ImGui::DestroyContext();
 
     return 0;
 }
