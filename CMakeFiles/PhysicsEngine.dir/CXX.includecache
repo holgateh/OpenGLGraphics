@@ -6,17 +6,57 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/harri/Desktop/Programming/PhysicsEngine/src/Test.cpp
-Test.hpp
-/mnt/c/Users/harri/Desktop/Programming/PhysicsEngine/src/Test.hpp
+/home/harrison/Programming/PhysicsEngine/src/tools/Texture.cpp
+tools/Texture.hpp
+-
+stb/stb_image.h
+/home/harrison/Programming/PhysicsEngine/src/tools/stb/stb_image.h
 
-/mnt/c/Users/harri/Desktop/Programming/PhysicsEngine/src/main.cpp
+include/stb/stb_image.h
+stb_image.h
+include/stb/stb_image.h
 stdio.h
 -
-Test.hpp
-/mnt/c/Users/harri/Desktop/Programming/PhysicsEngine/src/Test.hpp
+stdlib.h
+-
+stdarg.h
+-
+stddef.h
+-
+stdlib.h
+-
+string.h
+-
+limits.h
+-
+math.h
+-
+stdio.h
+-
+assert.h
+-
+stdint.h
+-
+emmintrin.h
+-
+intrin.h
+-
+arm_neon.h
+-
 
-include/Test.hpp
+include/tools/Texture.hpp
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+GL/gl.h
+-
+string
+-
+fstream
+-
+sstream
+-
 iostream
 -
 

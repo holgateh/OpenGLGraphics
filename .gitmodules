@@ -1,6 +1,0 @@
-[submodule "sudmodules/bgfx"]
-	path = sudmodules/bgfx
-	url = https://github.com/bkaradzic/bgfx.git
-[submodule "sudmodules/imgui"]
-	path = sudmodules/imgui
-	url = https://github.com/ocornut/imgui.git
