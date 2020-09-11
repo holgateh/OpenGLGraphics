@@ -6,6 +6,7 @@ CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.o: include/imgui/imconfig.h
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.o: include/imgui/imgui.h
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.o: include/imgui/imgui_internal.h
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.o: include/imgui/imstb_textedit.h
+CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.o: include/stb/stb_sprintf.h
 
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_demo.cpp.o: src/imgui/imgui_demo.cpp
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_demo.cpp.o: include/imgui/imconfig.h
@@ -18,6 +19,7 @@ CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_draw.cpp.o: include/imgui/imgui_int
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_draw.cpp.o: include/imgui/imstb_rectpack.h
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_draw.cpp.o: include/imgui/imstb_textedit.h
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_draw.cpp.o: include/imgui/imstb_truetype.h
+CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_draw.cpp.o: include/stb/stb_truetype.h
 
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_glfw.cpp.o: src/imgui/imgui_impl_glfw.cpp
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_glfw.cpp.o: include/imgui/imconfig.h

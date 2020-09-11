@@ -6,10 +6,12 @@
 
 #IncludeRegexTransform: 
 
-/home/harrison/Programming/PhysicsEngine/src/main.cpp
+/home/harrison/code/PhysicsEngine/src/main.cpp
 stdio.h
 -
 stdlib.h
+-
+math.h
 -
 thread
 -
@@ -23,14 +25,18 @@ GL/gl.h
 -
 glm/glm.hpp
 -
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
 imgui.h
-/home/harrison/Programming/PhysicsEngine/src/imgui.h
+/home/harrison/code/PhysicsEngine/src/imgui.h
 imgui_impl_glfw.h
-/home/harrison/Programming/PhysicsEngine/src/imgui_impl_glfw.h
+/home/harrison/code/PhysicsEngine/src/imgui_impl_glfw.h
 imgui_impl_opengl3.h
-/home/harrison/Programming/PhysicsEngine/src/imgui_impl_opengl3.h
+/home/harrison/code/PhysicsEngine/src/imgui_impl_opengl3.h
 implot.h
-/home/harrison/Programming/PhysicsEngine/src/implot.h
+/home/harrison/code/PhysicsEngine/src/implot.h
 fstream
 -
 iostream

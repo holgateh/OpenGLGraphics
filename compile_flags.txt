@@ -1,0 +1,9 @@
+-Iinclude 
+-Iinclude/imgui/ 
+-Iinclude/implot/ 
+-Iinclude/stb/
+-lglfw 
+-lGL 
+-lX11 
+-lpthread 
+-lrt

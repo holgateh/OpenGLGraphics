@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/harrison/Programming/PhysicsEngine
+CMAKE_SOURCE_DIR = /home/harrison/code/PhysicsEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/harrison/Programming/PhysicsEngine
+CMAKE_BINARY_DIR = /home/harrison/code/PhysicsEngine
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harrison/Programming/PhysicsEngine/CMakeFiles /home/harrison/Programming/PhysicsEngine//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/harrison/code/PhysicsEngine/CMakeFiles /home/harrison/code/PhysicsEngine//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harrison/Programming/PhysicsEngine/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/harrison/code/PhysicsEngine/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

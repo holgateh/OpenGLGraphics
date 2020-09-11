@@ -1,6 +1,7 @@
 // Include standard headers
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include <thread>
 #include <chrono>
@@ -14,8 +15,10 @@
 
 
 // Include GLM
+#define GLM_FORCE_RADIANS
 #include <glm/glm.hpp>
-using namespace glm;
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 // Include Imgui
 #include "imgui.h"
@@ -65,19 +68,74 @@ const std::string SHADER_PATH = "data/shaders/";
 Timer frameTimer, totalTimer;
 double frameTime, totalTime, frameTimeAverage, frameTimeMin = 100.0, frameTimeMax;
 uint32_t frame = 0;
-unsigned int frameCap = 0;
-tools::CircularQueue<double> frameTimes(100);
-tools::CircularQueue<double> timePoints(100);
+unsigned int frameCap = 60;
+
+float deltaTime = 0.0f, lastFrame = 0.0f;
+
+unsigned int width = 600, height = 400;
+
+
+const glm::vec3 initialFront = glm::vec3(0.0f, 0.0f, 1.0f);
+const glm::vec3 initialUp = glm::vec3(0.0f, 1.0f, 0.0f);
+const glm::vec3 initialRight = glm::vec3(1.0f, 0.0f, 0.0f);
+float anglePitch = 0.0f, angleYaw = 0.0f;
+//Camera stuff
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
+glm::vec3 cameraFront = initialFront;
+glm::vec3 cameraRight = initialRight;
+glm::vec3 cameraUp = initialUp;
+
+// mouse pos
+double lastMouseX = 0.0, lastMouseY = 0.0;
+
+
 
 
 // An array of 3 vectors which represents 3 vertices
 float vertices[] = {
-    // positions          // colors           // texture coords
-     0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
-     0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // bottom right
-    -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
-    -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
-}; 
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+};
 
 unsigned int indices[] = {  
         0, 1, 3, // first triangle
@@ -87,7 +145,55 @@ unsigned int indices[] = {
 
 void processInput(GLFWwindow* window)
 {
+    const float cameraSpeed = 2.5f * frameTime;
+    const float cameraRotateSpeed = 2.0f * frameTime; // adjust accordingly
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        cameraPos += cameraSpeed * cameraFront;
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        cameraPos -= cameraSpeed * cameraFront;
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+    if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
+        cameraPos += glm::normalize(cameraUp) * cameraSpeed;
+    if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS)
+        cameraPos -= glm::normalize(cameraUp) * cameraSpeed;
+    double xpos, ypos;
+    glfwGetCursorPos(window, &xpos, &ypos);
+    double deltaX = xpos - lastMouseX;
+    double deltaY = ypos - lastMouseY;
 
+        if (deltaX != 0.0)
+        {
+            float deltaYaw = deltaX * cameraRotateSpeed;
+            angleYaw += deltaYaw;
+            lastMouseX = xpos;
+            glm::quat rotateYaw = glm::angleAxis(-deltaYaw, cameraUp);
+            cameraFront = rotateYaw * cameraFront;
+            cameraRight = rotateYaw * cameraRight;
+        }
+        if (deltaY != 0.0)
+        {
+            float deltaPitch = deltaY * cameraRotateSpeed;
+            anglePitch += deltaPitch;
+
+            if(anglePitch > glm::pi<double>()/2.0)
+            {
+                deltaPitch -= anglePitch - glm::pi<double>()/2.0;
+                anglePitch = glm::pi<double>()/2.0;
+            }
+            else if (anglePitch < -glm::pi<double>()/2.0)
+            {
+                deltaPitch += -glm::pi<double>()/2.0 - anglePitch;
+                anglePitch = -glm::pi<double>()/2.0;
+            }
+
+
+            lastMouseY = ypos;
+            glm::quat rotatePitch = glm::angleAxis(deltaPitch, cameraRight);
+            cameraFront =  rotatePitch * cameraFront;
+        }
 }
 
 void drawUI()
@@ -162,7 +268,7 @@ int main()
 
     // Open a window and create its OpenGL context
     GLFWwindow* window; // (In the accompanying source code, this variable is global for simplicity)
-    window = glfwCreateWindow( 1024, 768, "Tutorial 01", NULL, NULL);
+    window = glfwCreateWindow( width, height, "PhysicsEngine", NULL, NULL);
     if( window == NULL ){
         fprintf( stderr, "Failed to open GLFW window. If you have an Intel GPU, they are not 3.3 compatible. Try the 2.1 version of the tutorials.\n" );
         glfwTerminate();
@@ -192,6 +298,9 @@ int main()
     // This will identify our vertex buffer
 
     Shader ourShader((SHADER_PATH + "vert.sh").c_str(), (SHADER_PATH + "frag.sh").c_str());
+  
+    unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+
 
     unsigned int VBO, VAO, EBO;
     glGenVertexArrays(1, &VAO);
@@ -208,13 +317,13 @@ int main()
 
 
     // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
     // color attribute
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
+    //glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    //glEnableVertexAttribArray(1);
     // texture coord attribute
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(2);
     
     int nrAttributes;
@@ -222,17 +331,40 @@ int main()
     std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes << std::endl;
 
     Texture texture("data/textures/wall.jpg", 512, 512, 3);
+    float angle = 0.0f;
 
+    glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 100.0f);
+
+    glm::mat4 model = glm::mat4(1.0f);
+    model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f)); 
+    
+    int mvpLoc = glGetUniformLocation(ourShader.ID, "mvp");
+
+    glEnable(GL_DEPTH_TEST);
+
+
+ 
+    glm::mat4 view;
 
     do{
         frame++;
+
         // input
         processInput(window);
 
+        // update 
+        glm::mat4 model = glm::mat4(1.0f);
+        model = glm::rotate(model, glm::radians((float)glfwGetTime()*0), glm::vec3(1.0f, 1.0f, 0.0f)); 
+        const float radius = 10.0f;
+        float camX = sin(glfwGetTime()) * radius;
+        float camZ = cos(glfwGetTime()) * radius;
+       
+        view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+        
         // render
         // clear the colorbuffer
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // feed inputs to dear imgui, start new frame
         ImGui_ImplOpenGL3_NewFrame();
@@ -250,8 +382,10 @@ int main()
 
         ourShader.use();
         ourShader.setFloat("colour", sin(timeValue));
-        glBindVertexArray(EBO);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, glm::value_ptr(proj * view * model));
+
+        glBindVertexArray(VAO);
+        glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices)/sizeof(float));
 
         drawUI();
     
@@ -262,7 +396,11 @@ int main()
         {
             std::this_thread::sleep_for(std::chrono::duration<double>(1.0 /frameCap - frameTimer.elapsedTime()) );
         }
-        frameTime = frameTimer.elapsedTime();
+        float currentTime = glfwGetTime();
+        deltaTime = currentTime - lastFrame;
+        lastFrame = currentTime;
+
+        frameTime = deltaTime;
         frameTimer.reset();
         totalTime = totalTimer.elapsedTime();
 
