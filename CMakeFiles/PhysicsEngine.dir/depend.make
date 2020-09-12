@@ -14,8 +14,12 @@ CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/tools/CircularQueue.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/tools/Shader.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/tools/Texture.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/tools/Timer.hpp
+CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/tools/Vertex.hpp
 
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: src/Renderer/Mesh.cpp
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: include/Renderer/Mesh.hpp
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: include/tinyobjloader/tinyobjloader.h
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: include/tools/Vertex.hpp
 
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: src/Renderer/Renderer.cpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Renderer/Mesh.hpp
@@ -27,6 +31,7 @@ CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/imgui/imgui_im
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/implot/implot.h
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/tools/Shader.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/tools/Texture.hpp
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/tools/Vertex.hpp
 
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.o: src/imgui/imgui.cpp
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.o: include/imgui/imconfig.h
@@ -103,6 +108,7 @@ CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/tools/CircularQueue.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/tools/Shader.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/tools/Texture.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/tools/Timer.hpp
+CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/tools/Vertex.hpp
 
 CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o: src/tools/MeshHelper.cpp
 

@@ -3,7 +3,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
 
-Texture::Texture(const char* texturePath, int width, int height, int numChannels)
+Texture::Texture(const char* texturePath)
 {
     unsigned char *data = stbi_load(texturePath, &width, &height, &numChannels, 0); 
     glGenTextures(1, &ID);  

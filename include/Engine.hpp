@@ -55,7 +55,7 @@ class Engine
 
         float deltaTime = 0.0f, lastFrame = 0.0f;
 
-        unsigned int width = 600, height = 400;
+        unsigned int width = 1500, height = 1000;
 
         bool mouseEnabled = true;
 
@@ -81,6 +81,7 @@ class Engine
         void updateUI();
         void processInput();
         void toggleMouse();
+        void updateCamera();
         void cleanup();
         //callbacks:
         static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);

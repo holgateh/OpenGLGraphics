@@ -19,8 +19,10 @@ class Texture
 {
 public:
     //Texture ID
-    unsigned int ID;
+    public:
+        unsigned int ID;
+        int width, height, numChannels;
 
-    Texture(const char* texturePath, int width, int height, int numChannels);
+    Texture(const char* texturePath);
     void bind();
 };

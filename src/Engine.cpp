@@ -1,56 +1,5 @@
 #include "Engine.hpp"
 
-
-// An array of 3 vectors which represents 3 vertices
-std::vector<float> vertices = {
-    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-     0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-
-    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-
-    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-     0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-     0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
-};
-
-unsigned int indices[] = {  
-        0, 1, 3, // first triangle
-        1, 2, 3  // second triangle
-    };
-
 void Engine::toggleMouse()
 {
     if(mouseEnabled)
@@ -108,12 +57,11 @@ void Engine::processInput()
         double deltaY = ypos - lastMouseY;
         lastMouseX = xpos;
         lastMouseY = ypos;
-
+        
         if (deltaX != 0.0)
         {
             float deltaYaw = deltaX * cameraRotateSpeed;
-            angleYaw += deltaYaw;
-
+            angleYaw -= deltaYaw;
             glm::quat rotateYaw = glm::angleAxis(-deltaYaw, cameraUp);
             cameraFront = rotateYaw * cameraFront;
             cameraRight = rotateYaw * cameraRight;
@@ -133,14 +81,21 @@ void Engine::processInput()
                 deltaPitch = deltaPitch + (-glm::pi<double>()/2.0 + boundry - anglePitch);
                 anglePitch = -glm::pi<double>()/2.0 + boundry;
             }
-
-            glm::quat rotatePitch = glm::angleAxis(deltaPitch, cameraRight);
-            cameraFront =  rotatePitch * cameraFront;
         }    
 
     }
     
    
+}
+
+
+void Engine::updateCamera()
+{
+    glm::quat rotateYaw = glm::angleAxis(angleYaw, initialUp);
+    glm::quat rotatePitch = glm::angleAxis(anglePitch, initialRight);
+    glm::quat rotateTotal = rotateYaw * rotatePitch;
+    cameraFront = rotateTotal * initialFront;
+    cameraRight =  rotateTotal* initialRight;
 }
 
 void Engine::updateUI()
@@ -166,6 +121,16 @@ void Engine::updateUI()
     }
     
     ImGui::End();
+
+    ImGui::Begin("Camera Control");
+    ImGui::Text("Position: ");
+    ImGui::InputFloat("x:", &cameraPos.x, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("y:", &cameraPos.y, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("z:", &cameraPos.z, 0.0f, 0.0f, "%f");
+    ImGui::Text("Rotation: ");
+    ImGui::SliderFloat("pitch: ",&anglePitch,-glm::pi<float>()/2,glm::pi<float>()/2,"%.1f");
+    ImGui::SliderFloat("yaw: ",&angleYaw,0,2*glm::pi<float>(),"%.1f");
+    ImGui::End();
     
 }
 
@@ -184,6 +149,7 @@ void Engine::key_callback(GLFWwindow* window, int key, int scancode, int action,
 void Engine::update()
 {
         // update 
+        updateCamera();
         glm::mat4 model = glm::mat4(1.0f);
         renderer.model = glm::rotate(model, glm::radians((float)glfwGetTime()*0), glm::vec3(1.0f, 1.0f, 0.0f)); 
         const float radius = 10.0f;
@@ -281,11 +247,9 @@ Engine::Engine()
 
     std::cout << "Testing\n";
 
-    renderer = Renderer(window, width, height, std::move(vertices));
+    renderer = Renderer(window, width, height);
 
-    vertices.clear();
 
-    std::cout << "Vertices size: " << vertices.size() << "\n";
 
     std::cout << "Renderer constructed.\n";
 

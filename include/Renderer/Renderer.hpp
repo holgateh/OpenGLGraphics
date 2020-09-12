@@ -28,6 +28,9 @@
 
 #include "tools/Shader.hpp"
 #include "tools/Texture.hpp"
+#include "Renderer/Mesh.hpp"
+#include "tools/Vertex.hpp"
+
 
 
 class Renderer
@@ -36,8 +39,13 @@ class Renderer
         unsigned int VBO, VAO, EBO;
         unsigned int transformLoc;
         unsigned int mvpLoc;
+        unsigned int lightLoc;
 
         std::vector<float> vertices;
+
+        glm::vec3 light = {-1.0f, -1.0f, -1.0f};
+        Mesh mesh;
+
         Shader ourShader;
         std::string SHADER_PATH = "data/shaders/";
 
@@ -48,7 +56,7 @@ class Renderer
         glm::mat4 proj, model, view;
     private:
     public:
-        Renderer(GLFWwindow* window, float width, float height, std::vector<float>&& vertices);
+        Renderer(GLFWwindow* window, float width, float height);
         Renderer();
         void init();
         void startNewImGuiFrame();

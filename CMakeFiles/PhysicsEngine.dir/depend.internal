@@ -15,8 +15,12 @@ CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o
  include/tools/Shader.hpp
  include/tools/Texture.hpp
  include/tools/Timer.hpp
+ include/tools/Vertex.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o
  /home/harrison/Programming/PhysicsEngine/src/Renderer/Mesh.cpp
+ include/Renderer/Mesh.hpp
+ include/tinyobjloader/tinyobjloader.h
+ include/tools/Vertex.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o
  /home/harrison/Programming/PhysicsEngine/src/Renderer/Renderer.cpp
  include/Renderer/Mesh.hpp
@@ -28,6 +32,7 @@ CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o
  include/implot/implot.h
  include/tools/Shader.hpp
  include/tools/Texture.hpp
+ include/tools/Vertex.hpp
 CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.o
  /home/harrison/Programming/PhysicsEngine/src/imgui/imgui.cpp
  include/imgui/imconfig.h
@@ -104,6 +109,7 @@ CMakeFiles/PhysicsEngine.dir/src/main.cpp.o
  include/tools/Shader.hpp
  include/tools/Texture.hpp
  include/tools/Timer.hpp
+ include/tools/Vertex.hpp
 CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o
  /home/harrison/Programming/PhysicsEngine/src/tools/MeshHelper.cpp
 CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o
