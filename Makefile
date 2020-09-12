@@ -169,6 +169,60 @@ src/Engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.s
 .PHONY : src/Engine.cpp.s
 
+src/Renderer/Mesh.o: src/Renderer/Mesh.cpp.o
+
+.PHONY : src/Renderer/Mesh.o
+
+# target to build an object file
+src/Renderer/Mesh.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o
+.PHONY : src/Renderer/Mesh.cpp.o
+
+src/Renderer/Mesh.i: src/Renderer/Mesh.cpp.i
+
+.PHONY : src/Renderer/Mesh.i
+
+# target to preprocess a source file
+src/Renderer/Mesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.i
+.PHONY : src/Renderer/Mesh.cpp.i
+
+src/Renderer/Mesh.s: src/Renderer/Mesh.cpp.s
+
+.PHONY : src/Renderer/Mesh.s
+
+# target to generate assembly for a file
+src/Renderer/Mesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.s
+.PHONY : src/Renderer/Mesh.cpp.s
+
+src/Renderer/Renderer.o: src/Renderer/Renderer.cpp.o
+
+.PHONY : src/Renderer/Renderer.o
+
+# target to build an object file
+src/Renderer/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o
+.PHONY : src/Renderer/Renderer.cpp.o
+
+src/Renderer/Renderer.i: src/Renderer/Renderer.cpp.i
+
+.PHONY : src/Renderer/Renderer.i
+
+# target to preprocess a source file
+src/Renderer/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.i
+.PHONY : src/Renderer/Renderer.cpp.i
+
+src/Renderer/Renderer.s: src/Renderer/Renderer.cpp.s
+
+.PHONY : src/Renderer/Renderer.s
+
+# target to generate assembly for a file
+src/Renderer/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.s
+.PHONY : src/Renderer/Renderer.cpp.s
+
 src/imgui/imgui.o: src/imgui/imgui.cpp.o
 
 .PHONY : src/imgui/imgui.o
@@ -559,6 +613,12 @@ help:
 	@echo "... src/Engine.o"
 	@echo "... src/Engine.i"
 	@echo "... src/Engine.s"
+	@echo "... src/Renderer/Mesh.o"
+	@echo "... src/Renderer/Mesh.i"
+	@echo "... src/Renderer/Mesh.s"
+	@echo "... src/Renderer/Renderer.o"
+	@echo "... src/Renderer/Renderer.i"
+	@echo "... src/Renderer/Renderer.s"
 	@echo "... src/imgui/imgui.o"
 	@echo "... src/imgui/imgui.i"
 	@echo "... src/imgui/imgui.s"

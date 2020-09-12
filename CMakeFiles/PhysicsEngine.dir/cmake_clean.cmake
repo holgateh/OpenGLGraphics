@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o"
+  "CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o"
+  "CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_demo.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_draw.cpp.o"

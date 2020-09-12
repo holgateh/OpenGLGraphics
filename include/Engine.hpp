@@ -7,6 +7,11 @@
 #include <thread>
 #include <chrono>
 #include <memory>
+#include <fstream>
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <sstream>
 
 // Include GLEW. Always include it before gl.h and glfw3.h, since it's a bit magic.
 #include <GL/glew.h>
@@ -29,11 +34,6 @@
 // Implot
 #include "implot.h"
 
-#include <fstream>
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <sstream>
 
 #include "tools/Shader.hpp"
 #include "tools/Texture.hpp"
@@ -45,12 +45,11 @@
 class Engine
 {
     private:
-        //Renderer renderer;
+        Renderer renderer;
         GLFWwindow* window;
 
-        const std::string SHADER_PATH = "data/shaders/";
         Timer frameTimer, totalTimer;
-        double frameTime, totalTime, frameTimeMean, frameTimeMin = 100.0, frameTimeMax;
+        double frameTime, totalTime, frameTimeMean, frameTimeMin = 100000.0, frameTimeMax;
         uint32_t frame = 0;
         unsigned int frameCap = 60;
 
@@ -77,12 +76,12 @@ class Engine
     private:
 
         void initWindow();
-        void initUI();
         void render();
-        void renderUI();
+        void update();
+        void updateUI();
         void processInput();
         void toggleMouse();
-        void cleanUp();
+        void cleanup();
         //callbacks:
         static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 

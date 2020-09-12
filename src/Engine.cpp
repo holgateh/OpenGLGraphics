@@ -2,7 +2,7 @@
 
 
 // An array of 3 vectors which represents 3 vertices
-float vertices[] = {
+std::vector<float> vertices = {
     -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
      0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
      0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
@@ -143,16 +143,14 @@ void Engine::processInput()
    
 }
 
-void Engine::renderUI()
+void Engine::updateUI()
 {
     // render your GUI
     ImGui::Begin("Performance Statistics");
     ImGui::Text(("Frame: " + std::to_string(frame)).c_str());
     ImGui::Text(("Frame time: " + std::to_string(frameTime* 1000.0) + "ms" ).c_str());
-    frameTimeMean = frame > 1 ? (frameTimeMean*(frame - 1) + frameTime)/frame : frameTime;
     ImGui::Text(("Mean frame time: " + std::to_string(frameTimeMean * 1000.0) + "ms" ).c_str());
-    frameTimeMin = frameTime < frameTimeMin ? frameTime : frameTimeMin;
-    frameTimeMax = frameTime > frameTimeMax ? frameTime : frameTimeMax;
+
     ImGui::Text(("Min frame time: " + std::to_string(frameTimeMin * 1000.0) + "ms" ).c_str());
     ImGui::Text(("Max frame time: " + std::to_string(frameTimeMax * 1000.0) + "ms" ).c_str());
     static ScrollingBuffer sdata1;
@@ -168,26 +166,10 @@ void Engine::renderUI()
     }
     
     ImGui::End();
-
-    // Render dear imgui into screen
-    ImGui::Render();
-    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     
 }
 
-void Engine::initUI()
-{
-    // Setup Dear ImGui context
-    IMGUI_CHECKVERSION();
-    ImGui::CreateContext();
-    ImPlot::CreateContext();
-    ImGuiIO &io = ImGui::GetIO();
-    // Setup Platform/Renderer bindings
-    ImGui_ImplGlfw_InitForOpenGL(window, true);
-    ImGui_ImplOpenGL3_Init(NULL);
-    // Setup Dear ImGui style
-    ImGui::StyleColorsDark();
-}
+
 
 void Engine::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
@@ -199,10 +181,67 @@ void Engine::key_callback(GLFWwindow* window, int key, int scancode, int action,
 
 
 
-
-
+void Engine::update()
+{
+        // update 
+        glm::mat4 model = glm::mat4(1.0f);
+        renderer.model = glm::rotate(model, glm::radians((float)glfwGetTime()*0), glm::vec3(1.0f, 1.0f, 0.0f)); 
+        const float radius = 10.0f;
+        float camX = sin(glfwGetTime()) * radius;
+        float camZ = cos(glfwGetTime()) * radius;
+        renderer.view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+}
 
 void Engine::run()
+{ 
+    do{
+
+        renderer.startNewImGuiFrame();
+        frame++;
+
+        // input
+        processInput();
+
+        //Update objects, camera and stuff;
+        update();
+        
+
+        updateUI();
+        renderer.render();
+
+        // swap buffers and poll IO events
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+
+        //Deal with frame cap (if there is one)
+        if(frameTimer.elapsedTime() < 1.0/ frameCap)
+        {
+            std::this_thread::sleep_for(std::chrono::duration<double>(1.0 /frameCap - frameTimer.elapsedTime()) );
+        }
+
+        //recalculate deltatime
+        float currentTime = glfwGetTime();
+        deltaTime = currentTime - lastFrame;
+        lastFrame = currentTime;
+
+        frameTime = deltaTime;
+        frameTimeMean = frame > 1 ? (frameTimeMean*(frame - 1) + frameTime)/frame : frameTime;
+        frameTimeMin = frameTime < frameTimeMin ? frameTime : frameTimeMin;
+        frameTimeMax = frameTime > frameTimeMax ? frameTime : frameTimeMax;
+
+        frameTimer.reset();
+        totalTime = totalTimer.elapsedTime();
+
+    } // Check if the ESC key was pressed or the window was closed
+    while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
+           glfwWindowShouldClose(window) == 0 );
+
+    renderer.cleanup();
+}
+
+
+
+Engine::Engine()
 {
     printf("Program started.\n");
 
@@ -240,137 +279,20 @@ void Engine::run()
     glfwSetKeyCallback(window, key_callback);
     glfwSetWindowUserPointer(window, this);
 
+    std::cout << "Testing\n";
+
+    renderer = Renderer(window, width, height, std::move(vertices));
+
+    vertices.clear();
+
+    std::cout << "Vertices size: " << vertices.size() << "\n";
+
+    std::cout << "Renderer constructed.\n";
+
     // ImGui
-    initUI();
-
-
-    GLuint VertexArrayID;
-    glGenVertexArrays(1, &VertexArrayID);
-    glBindVertexArray(VertexArrayID);
-
-
+    renderer.initImGui();
 
     // This will identify our vertex buffer
 
-    Shader ourShader((SHADER_PATH + "vert.sh").c_str(), (SHADER_PATH + "frag.sh").c_str());
-  
-    unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
-
-
-    unsigned int VBO, VAO, EBO;
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
-
-    glBindVertexArray(VAO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-
-    // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    // color attribute
-    //glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-    //glEnableVertexAttribArray(1);
-    // texture coord attribute
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(2);
-    
-    int nrAttributes;
-    glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
-    std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes << std::endl;
-
-    Texture texture("data/textures/wall.jpg", 512, 512, 3);
-    float angle = 0.0f;
-
-    glm::mat4 proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 100.0f);
-
-    glm::mat4 model = glm::mat4(1.0f);
-    model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f)); 
-    
-    int mvpLoc = glGetUniformLocation(ourShader.ID, "mvp");
-
-    glEnable(GL_DEPTH_TEST);
-
-
- 
-    glm::mat4 view;
-
-    do{
-        frame++;
-
-        // input
-        processInput();
-
-        // update 
-        glm::mat4 model = glm::mat4(1.0f);
-        model = glm::rotate(model, glm::radians((float)glfwGetTime()*0), glm::vec3(1.0f, 1.0f, 0.0f)); 
-        const float radius = 10.0f;
-        float camX = sin(glfwGetTime()) * radius;
-        float camZ = cos(glfwGetTime()) * radius;
-       
-        view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-        
-        // render
-        // clear the colorbuffer
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        // feed inputs to dear imgui, start new frame
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
-
-
-        // be sure to activate the shader
-        float timeValue = glfwGetTime();
-
-
-        //texture.bind();
-
-        // now render the triangle
-
-        ourShader.use();
-        ourShader.setFloat("colour", sin(timeValue));
-        glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, glm::value_ptr(proj * view * model));
-
-        glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices)/sizeof(float));
-
-        renderUI();
-    
-        // swap buffers and poll IO events
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-        if(frameTimer.elapsedTime() < 1.0/ frameCap)
-        {
-            std::this_thread::sleep_for(std::chrono::duration<double>(1.0 /frameCap - frameTimer.elapsedTime()) );
-        }
-        float currentTime = glfwGetTime();
-        deltaTime = currentTime - lastFrame;
-        lastFrame = currentTime;
-
-        frameTime = deltaTime;
-        frameTimer.reset();
-        totalTime = totalTimer.elapsedTime();
-
-    } // Check if the ESC key was pressed or the window was closed
-    while( glfwGetKey(window, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
-           glfwWindowShouldClose(window) == 0 );
-
-    ImPlot::DestroyContext();
-    ImGui::DestroyContext();
-}
-
-
-
-
-Engine::Engine()
-{
-
+    renderer.init();
 }

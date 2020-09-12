@@ -13,12 +13,11 @@ class Mesh
 {
     private:
         const std::string path;
-     
     public:
-        std::vector<float> vertices;
+        const std::vector<float> vertices;
     private:
     public:
         Mesh(std::string path);
-        Mesh(std::vector<float> vertices);
+        Mesh(std::vector<float> vertices, std::vector<unsigned int> indices);
 
 };
