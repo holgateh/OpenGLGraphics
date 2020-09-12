@@ -5,14 +5,13 @@ void Engine::toggleMouse()
     if(mouseEnabled)
     {
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-        mouseEnabled = false;
         glfwGetCursorPos(window, &lastMouseX, &lastMouseY);
     }
     else
     {
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-        mouseEnabled = true;
     }
+    mouseEnabled = !mouseEnabled;
 }
 
 void Engine::processInput()
@@ -102,6 +101,8 @@ void Engine::updateUI()
 {
     // render your GUI
     ImGui::Begin("Performance Statistics");
+    ImGui::Text(("Vertices: " + std::to_string(renderer.getNumVertices())).c_str());
+    ImGui::Text(("Triangles: " + std::to_string(renderer.getNumTriangles())).c_str());
     ImGui::Text(("Frame: " + std::to_string(frame)).c_str());
     ImGui::Text(("Frame time: " + std::to_string(frameTime* 1000.0) + "ms" ).c_str());
     ImGui::Text(("Mean frame time: " + std::to_string(frameTimeMean * 1000.0) + "ms" ).c_str());

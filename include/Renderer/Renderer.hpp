@@ -41,8 +41,6 @@ class Renderer
         unsigned int mvpLoc;
         unsigned int lightLoc;
 
-        std::vector<float> vertices;
-
         glm::vec3 light = {-1.0f, -1.0f, -1.0f};
         Mesh mesh;
 
@@ -64,5 +62,6 @@ class Renderer
         void render();
         void renderUI();
         void cleanup();
-
+        uint32_t getNumVertices();
+        uint32_t getNumTriangles();
 };

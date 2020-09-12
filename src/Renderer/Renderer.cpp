@@ -128,6 +128,16 @@ void Renderer::render()
     glfwPollEvents();
 }
 
+uint32_t Renderer::getNumVertices()
+{
+    return mesh.vertices.size();
+}
+
+uint32_t Renderer::getNumTriangles()
+{
+    return mesh.indices.size() / 3;
+}
+
 void Renderer::cleanup()
 {
     ImPlot::DestroyContext();
