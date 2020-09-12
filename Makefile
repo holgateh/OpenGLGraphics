@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/harrison/code/PhysicsEngine
+CMAKE_SOURCE_DIR = /home/harrison/Programming/PhysicsEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/harrison/code/PhysicsEngine
+CMAKE_BINARY_DIR = /home/harrison/Programming/PhysicsEngine
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harrison/code/PhysicsEngine/CMakeFiles /home/harrison/code/PhysicsEngine//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/harrison/Programming/PhysicsEngine/CMakeFiles /home/harrison/Programming/PhysicsEngine//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harrison/code/PhysicsEngine/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/harrison/Programming/PhysicsEngine/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -141,6 +141,33 @@ PhysicsEngine: cmake_check_build_system
 PhysicsEngine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/build
 .PHONY : PhysicsEngine/fast
+
+src/Engine.o: src/Engine.cpp.o
+
+.PHONY : src/Engine.o
+
+# target to build an object file
+src/Engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o
+.PHONY : src/Engine.cpp.o
+
+src/Engine.i: src/Engine.cpp.i
+
+.PHONY : src/Engine.i
+
+# target to preprocess a source file
+src/Engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.i
+.PHONY : src/Engine.cpp.i
+
+src/Engine.s: src/Engine.cpp.s
+
+.PHONY : src/Engine.s
+
+# target to generate assembly for a file
+src/Engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.s
+.PHONY : src/Engine.cpp.s
 
 src/imgui/imgui.o: src/imgui/imgui.cpp.o
 
@@ -412,6 +439,33 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/tools/MeshHelper.o: src/tools/MeshHelper.cpp.o
+
+.PHONY : src/tools/MeshHelper.o
+
+# target to build an object file
+src/tools/MeshHelper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o
+.PHONY : src/tools/MeshHelper.cpp.o
+
+src/tools/MeshHelper.i: src/tools/MeshHelper.cpp.i
+
+.PHONY : src/tools/MeshHelper.i
+
+# target to preprocess a source file
+src/tools/MeshHelper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.i
+.PHONY : src/tools/MeshHelper.cpp.i
+
+src/tools/MeshHelper.s: src/tools/MeshHelper.cpp.s
+
+.PHONY : src/tools/MeshHelper.s
+
+# target to generate assembly for a file
+src/tools/MeshHelper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.s
+.PHONY : src/tools/MeshHelper.cpp.s
+
 src/tools/Shader.o: src/tools/Shader.cpp.o
 
 .PHONY : src/tools/Shader.o
@@ -502,6 +556,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... PhysicsEngine"
+	@echo "... src/Engine.o"
+	@echo "... src/Engine.i"
+	@echo "... src/Engine.s"
 	@echo "... src/imgui/imgui.o"
 	@echo "... src/imgui/imgui.i"
 	@echo "... src/imgui/imgui.s"
@@ -532,6 +589,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/tools/MeshHelper.o"
+	@echo "... src/tools/MeshHelper.i"
+	@echo "... src/tools/MeshHelper.s"
 	@echo "... src/tools/Shader.o"
 	@echo "... src/tools/Shader.i"
 	@echo "... src/tools/Shader.s"

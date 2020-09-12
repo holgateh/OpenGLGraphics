@@ -1,7 +1,7 @@
--Iinclude 
--Iinclude/imgui/ 
--Iinclude/implot/ 
--Iinclude/stb/
+-I/home/harrison/Programming/PhysicsEngine/include 
+-I/home/harrison/Programming/PhysicsEngine/include/imgui/ 
+-I/home/harrison/Programming/PhysicsEngine/include/implot/ 
+-I/home/harrison/Programming/PhysicsEngine/include/stb/
 -lglfw 
 -lGL 
 -lX11 

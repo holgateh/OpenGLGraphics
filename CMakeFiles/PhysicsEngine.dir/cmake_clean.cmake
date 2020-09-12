@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_demo.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_draw.cpp.o"
@@ -9,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/main.cpp.o"
+  "CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o"
