@@ -6,38 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/home/harrison/Programming/PhysicsEngine/src/Engine.cpp
-Engine.hpp
-/home/harrison/Programming/PhysicsEngine/src/Engine.hpp
+/home/harrison/Programming/PhysicsEngine/src/Renderer/Renderer.cpp
+Renderer/Renderer.hpp
+/home/harrison/Programming/PhysicsEngine/src/Renderer/Renderer/Renderer.hpp
 
-include/Engine.hpp
-stdio.h
--
-stdlib.h
--
-math.h
--
-thread
--
-chrono
--
-memory
--
-fstream
--
-iostream
--
+include/Entity.hpp
 vector
 -
-queue
--
-sstream
--
-GL/glew.h
--
-GLFW/glfw3.h
--
-GL/gl.h
+memory
 -
 glm/glm.hpp
 -
@@ -45,24 +21,12 @@ glm/gtc/matrix_transform.hpp
 -
 glm/gtc/type_ptr.hpp
 -
-imgui.h
-include/imgui.h
-imgui_impl_glfw.h
-include/imgui_impl_glfw.h
-imgui_impl_opengl3.h
-include/imgui_impl_opengl3.h
-implot.h
-include/implot.h
+Renderer/Mesh.hpp
+include/Renderer/Mesh.hpp
 tools/Shader.hpp
 include/tools/Shader.hpp
 tools/Texture.hpp
 include/tools/Texture.hpp
-tools/Timer.hpp
-include/tools/Timer.hpp
-tools/CircularQueue.hpp
-include/tools/CircularQueue.hpp
-Renderer/Renderer.hpp
-include/Renderer/Renderer.hpp
 
 include/Renderer/Mesh.hpp
 vector
@@ -79,6 +43,12 @@ GLFW/glfw3.h
 -
 GL/gl.h
 -
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
 tools/Vertex.hpp
 include/Renderer/tools/Vertex.hpp
 
@@ -86,6 +56,8 @@ include/Renderer/Renderer.hpp
 Renderer/Mesh.hpp
 include/Renderer/Renderer/Mesh.hpp
 vector
+-
+memory
 -
 GL/glew.h
 -
@@ -111,10 +83,12 @@ tools/Shader.hpp
 include/Renderer/tools/Shader.hpp
 tools/Texture.hpp
 include/Renderer/tools/Texture.hpp
-Renderer/Mesh.hpp
-include/Renderer/Renderer/Mesh.hpp
 tools/Vertex.hpp
 include/Renderer/tools/Vertex.hpp
+Renderer/Mesh.hpp
+include/Renderer/Renderer/Mesh.hpp
+Entity.hpp
+include/Renderer/Entity.hpp
 
 include/imgui/imconfig.h
 
@@ -150,12 +124,6 @@ include/implot/implot.h
 imgui.h
 include/implot/imgui.h
 
-include/tools/CircularQueue.hpp
-vector
--
-iostream
--
-
 include/tools/Shader.hpp
 GL/glew.h
 -
@@ -188,10 +156,6 @@ fstream
 sstream
 -
 iostream
--
-
-include/tools/Timer.hpp
-chrono
 -
 
 include/tools/Vertex.hpp

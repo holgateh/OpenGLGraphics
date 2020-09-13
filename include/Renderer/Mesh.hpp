@@ -11,6 +11,11 @@
 #include <GLFW/glfw3.h>
 #include <GL/gl.h>
 
+#define GLM_FORCE_RADIANS
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include "tools/Vertex.hpp"
 
 
@@ -21,12 +26,14 @@ class Mesh
     public:
         std::vector<Vertex> vertices;
         std::vector<uint32_t> indices;
+        unsigned int VBO, VAO, EBO;
     private:
         void loadModel();
     public:
         Mesh();
         Mesh(std::string path);
         Mesh(std::vector<float> vertices, std::vector<unsigned int> indices);
+        void bufferMesh();
         
 
 };

@@ -8,7 +8,7 @@ Renderer::Renderer(GLFWwindow* window, float width, float height) :
     this->window = window;
     this->width = width;
     this->height = height;
-    mesh = Mesh("data/meshes/test.obj");
+
     light = glm::normalize(light);
 }
 
@@ -17,36 +17,7 @@ void Renderer::init()
     // This will identify our vertex buffer
     transformLoc = glGetUniformLocation(ourShader.ID, "transform");
     mvpLoc = glGetUniformLocation(ourShader.ID, "mvp");
-    lightLoc = glGetUniformLocation(ourShader.ID, "lightDir");
-
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
-
-    glBindVertexArray(VAO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex)* mesh.vertices.size(), (void*)mesh.vertices.data(), GL_STATIC_DRAW);
-
-    std::cout << "vertex size" << sizeof(Vertex) << "\n";
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(uint32_t) * mesh.indices.size(), mesh.indices.data(), GL_STATIC_DRAW);
-
-
-    // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 11 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    // color attribute
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 11 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-    // norm attribute
-    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 11 * sizeof(float), (void*)(6 * sizeof(float)));
-    glEnableVertexAttribArray(2);
-    // texture attribute
-    glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, 11 * sizeof(float), (void*)(9 * sizeof(float)));
-    glEnableVertexAttribArray(3);
-    
+    lightLoc = glGetUniformLocation(ourShader.ID, "lightDir");    
 
     Texture texture("data/textures/wall.jpg");
     int nrAttributes;
@@ -54,10 +25,12 @@ void Renderer::init()
     std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes << std::endl;
 
     proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 100.0f);
-    model = glm::mat4(1.0f);
-    model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f)); 
+
 
     glEnable(GL_DEPTH_TEST);
+
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
 
 }
 
@@ -82,6 +55,12 @@ void Renderer::initImGui()
     ImGui::StyleColorsDark();
 }
 
+void Renderer::addEntity(std::shared_ptr<Entity> entity)
+{
+    entities.push_back(entity);
+}
+
+
 void Renderer::render()
 {
 
@@ -100,24 +79,30 @@ void Renderer::render()
 
     // feed inputs to dear imgui, start new frame
 
-
-    // be sure to activate the shader
-    float timeValue = glfwGetTime();
-
     //texture.bind();
 
     //now render the triangle
 
     ourShader.use();
-
     ourShader.setFloat("colour", sin(timeValue));
-    glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, glm::value_ptr(proj * view * model));
-    glUniform3fv(lightLoc, 1, glm::value_ptr(light));
-    glBindVertexArray(VAO);
-    //glDrawArrays(GL_TRIANGLES, 0, mesh.indices.size());
 
-    glDrawElements(GL_TRIANGLES, mesh.indices.size(), GL_UNSIGNED_INT, 0);
+    for(auto& entity : entities)
+    {
+        model = glm::mat4(1.0f);
+        model = glm::rotate(model, glm::radians(entity->rotation.x), glm::vec3(0.0f, 1.0f, 0.0f));
+        model = glm::rotate(model, glm::radians(entity->rotation.y), glm::vec3(1.0f, 0.0f, 0.0f));
+        model = glm::rotate(model, glm::radians(entity->rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
+        model = glm::translate(model, entity->pos);
 
+
+        glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, glm::value_ptr(proj * view * model));
+        glUniform3fv(lightLoc, 1, glm::value_ptr(light));
+
+        glBindVertexArray(entity->mesh->VAO);
+        //glDrawArrays(GL_TRIANGLES, 0, mesh.indices.size());
+
+        glDrawElements(GL_TRIANGLES, entity->mesh->indices.size(), GL_UNSIGNED_INT, 0);
+    }
 
     // Render dear imgui into screen
     ImGui::Render();
@@ -130,12 +115,23 @@ void Renderer::render()
 
 uint32_t Renderer::getNumVertices()
 {
-    return mesh.vertices.size();
+    unsigned int sum = 0;
+    for (auto& entity : entities)
+    {
+        sum += entity->mesh->vertices.size();
+    }
+
+    return sum;
 }
 
 uint32_t Renderer::getNumTriangles()
 {
-    return mesh.indices.size() / 3;
+    unsigned int sum = 0;
+    for (auto& entity : entities)
+    {
+        sum += entity->mesh->indices.size();
+    }
+    return sum / 3;
 }
 
 void Renderer::cleanup()

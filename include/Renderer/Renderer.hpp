@@ -2,6 +2,7 @@
 #include "Renderer/Mesh.hpp"
 
 #include <vector>
+#include <memory>
 
 // Include GLEW. Always include it before gl.h and glfw3.h, since it's a bit magic.
 #include <GL/glew.h>
@@ -28,21 +29,22 @@
 
 #include "tools/Shader.hpp"
 #include "tools/Texture.hpp"
-#include "Renderer/Mesh.hpp"
 #include "tools/Vertex.hpp"
+#include "Renderer/Mesh.hpp"
+#include "Entity.hpp"
 
 
 
 class Renderer
 {
     private:
-        unsigned int VBO, VAO, EBO;
         unsigned int transformLoc;
         unsigned int mvpLoc;
         unsigned int lightLoc;
 
-        glm::vec3 light = {-1.0f, -1.0f, -1.0f};
-        Mesh mesh;
+        glm::vec3 light = {0.0f, -1.0f, 0.0f};
+        std::vector<Mesh> meshes;
+        std::vector<std::shared_ptr<Entity>> entities;
 
         Shader ourShader;
         std::string SHADER_PATH = "data/shaders/";
@@ -62,6 +64,7 @@ class Renderer
         void render();
         void renderUI();
         void cleanup();
+        void addEntity(std::shared_ptr<Entity> entity);
         uint32_t getNumVertices();
         uint32_t getNumTriangles();
 };

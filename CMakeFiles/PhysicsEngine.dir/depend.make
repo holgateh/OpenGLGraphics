@@ -3,6 +3,7 @@
 
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: src/Engine.cpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Engine.hpp
+CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Entity.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Renderer/Renderer.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/imgui/imconfig.h
@@ -22,6 +23,7 @@ CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: include/tinyobjloader/tiny
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: include/tools/Vertex.hpp
 
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: src/Renderer/Renderer.cpp
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Entity.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Renderer/Renderer.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/imgui/imconfig.h
@@ -97,6 +99,7 @@ CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.o: include/implot/implo
 
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Engine.hpp
+CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Entity.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Renderer/Renderer.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/imgui/imconfig.h

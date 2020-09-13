@@ -13,8 +13,9 @@ uniform vec3 lightDir;
 
 void main()
 {
+
     gl_Position = mvp * vec4(aPos, 1);
-    float nColor = -1.0 * dot(aNorm , lightDir); // set ourColor to the input color we got from the vertex data
+    float nColor = -1.0f * dot(aNorm , lightDir); // set ourColor to the input color we got from the vertex data
     ourColor = vec3(nColor, nColor, nColor);
     TexCoord = aTexCoord;
 } 

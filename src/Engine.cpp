@@ -132,6 +132,18 @@ void Engine::updateUI()
     ImGui::SliderFloat("pitch: ",&anglePitch,-glm::pi<float>()/2,glm::pi<float>()/2,"%.1f");
     ImGui::SliderFloat("yaw: ",&angleYaw,0,2*glm::pi<float>(),"%.1f");
     ImGui::End();
+
+
+    ImGui::Begin("Model Control");
+    ImGui::Text("Position: ");
+    ImGui::InputFloat("x:", &entities.at(0)->pos.x, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("y:", &entities.at(0)->pos.y, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("z:", &entities.at(0)->pos.z, 0.0f, 0.0f, "%f");
+    ImGui::Text("Rotation: ");
+    ImGui::InputFloat("yaw:", &entities.at(0)->rotation.x, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("pitch:", &entities.at(0)->rotation.y, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("roll:", &entities.at(0)->rotation.z, 0.0f, 0.0f, "%f");
+    ImGui::End();
     
 }
 
@@ -157,6 +169,7 @@ void Engine::update()
         float camX = sin(glfwGetTime()) * radius;
         float camZ = cos(glfwGetTime()) * radius;
         renderer.view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+
 }
 
 void Engine::run()
@@ -260,4 +273,18 @@ Engine::Engine()
     // This will identify our vertex buffer
 
     renderer.init();
+
+    auto model1 = std::make_shared<Entity>();
+    auto model2 = std::make_shared<Entity>();
+    model1->mesh = std::make_shared<Mesh>("data/meshes/test.obj");
+    model2->mesh = std::make_shared<Mesh>("data/meshes/platform.obj");
+    model1->mesh->bufferMesh();
+    model2->mesh->bufferMesh();
+    entities.push_back(model1);
+    entities.push_back(model2);
+    renderer.addEntity(model1);
+    renderer.addEntity(model2);
+    model1->pos = glm::vec3(0.0f, 5.0f, 0.0f);
+    model2->pos = glm::vec3(0.0f, -3.0f, 0.0f);
+
 }

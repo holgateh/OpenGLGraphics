@@ -39,6 +39,7 @@
 #include "tools/Texture.hpp"
 #include "tools/Timer.hpp"
 #include "tools/CircularQueue.hpp"
+#include "Entity.hpp"
 
 #include "Renderer/Renderer.hpp"
 
@@ -51,7 +52,7 @@ class Engine
         Timer frameTimer, totalTimer;
         double frameTime, totalTime, frameTimeMean, frameTimeMin = 100000.0, frameTimeMax;
         uint32_t frame = 0;
-        unsigned int frameCap = 60;
+        unsigned int frameCap = 0;
 
         float deltaTime = 0.0f, lastFrame = 0.0f;
 
@@ -72,6 +73,9 @@ class Engine
 
         // mouse pos
         double lastMouseX = 0.0, lastMouseY = 0.0;
+
+        std::vector<std::shared_ptr<Entity>> entities;
+
     public:
     private:
 
