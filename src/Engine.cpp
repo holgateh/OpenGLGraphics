@@ -106,7 +106,6 @@ void Engine::updateUI()
     ImGui::Text(("Frame: " + std::to_string(frame)).c_str());
     ImGui::Text(("Frame time: " + std::to_string(frameTime* 1000.0) + "ms" ).c_str());
     ImGui::Text(("Mean frame time: " + std::to_string(frameTimeMean * 1000.0) + "ms" ).c_str());
-
     ImGui::Text(("Min frame time: " + std::to_string(frameTimeMin * 1000.0) + "ms" ).c_str());
     ImGui::Text(("Max frame time: " + std::to_string(frameTimeMax * 1000.0) + "ms" ).c_str());
     static ScrollingBuffer sdata1;
@@ -125,37 +124,31 @@ void Engine::updateUI()
 
     ImGui::Begin("Camera Control");
     ImGui::Text("Position: ");
-    ImGui::InputFloat("x:", &cameraPos.x, 0.0f, 0.0f, "%f");
-    ImGui::InputFloat("y:", &cameraPos.y, 0.0f, 0.0f, "%f");
-    ImGui::InputFloat("z:", &cameraPos.z, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("x", &cameraPos.x, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("y", &cameraPos.y, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("z", &cameraPos.z, 0.0f, 0.0f, "%f");
     ImGui::Text("Rotation: ");
-    ImGui::SliderFloat("pitch: ",&anglePitch,-glm::pi<float>()/2,glm::pi<float>()/2,"%.1f");
-    ImGui::SliderFloat("yaw: ",&angleYaw,0,2*glm::pi<float>(),"%.1f");
+    ImGui::SliderFloat("pitch: ",&anglePitch, -glm::pi<float>()/2, glm::pi<float>()/2,"%.1f");
+    ImGui::SliderFloat("yaw: ",&angleYaw ,0.0f ,2*glm::pi<float>(), "%.1f");
     ImGui::End();
 
 
     ImGui::Begin("Model Control");
     ImGui::Text("Position: ");
-    ImGui::InputFloat("x:", &entities->at(0).pos.x, 0.0f, 0.0f, "%f");
-    ImGui::InputFloat("y:", &entities->at(0).pos.y, 0.0f, 0.0f, "%f");
-    ImGui::InputFloat("z:", &entities->at(0).pos.z, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("x", &entities->at(0).pos.x, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("y", &entities->at(0).pos.y, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("z", &entities->at(0).pos.z, 0.0f, 0.0f, "%f");
     ImGui::Text("Rotation: ");
-    ImGui::InputFloat("yaw:", &entities->at(0).rotation.x, 0.0f, 0.0f, "%f");
-    ImGui::InputFloat("pitch:", &entities->at(0).rotation.y, 0.0f, 0.0f, "%f");
-    ImGui::InputFloat("roll:", &entities->at(0).rotation.z, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("yaw", &entities->at(0).rotation.x, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("pitch", &entities->at(0).rotation.y, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("roll", &entities->at(0).rotation.z, 0.0f, 0.0f, "%f");
     ImGui::End();
     
 }
 
 
 
-void Engine::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
-{
-    if (key == GLFW_KEY_M && action == GLFW_PRESS)
-    {
-        static_cast<Engine*>(glfwGetWindowUserPointer(window))->toggleMouse();
-    }
-}
+
 
 
 
@@ -256,7 +249,11 @@ Engine::Engine() : entities(std::make_shared<std::vector<Entity>>())
 
     // Ensure we can capture the escape key being pressed below
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+    
+    // Set callbacks:
     glfwSetKeyCallback(window, key_callback);
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
     glfwSetWindowUserPointer(window, this);
 
     std::cout << "Testing\n";
@@ -289,3 +286,21 @@ Engine::Engine() : entities(std::make_shared<std::vector<Entity>>())
     //std::cout << "Entities size: " << entities.size() << "\n";
 
 }
+
+
+void Engine::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if (key == GLFW_KEY_M && action == GLFW_PRESS)
+    {
+        static_cast<Engine*>(glfwGetWindowUserPointer(window))->toggleMouse();
+    }
+}
+void Engine::framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    glViewport(0, 0, width, height);
+    Engine* engine = static_cast<Engine*>(glfwGetWindowUserPointer(window));
+    engine->width = width;
+    engine->height = height;
+    engine->renderer.viewportSizeChanged();
+}
+

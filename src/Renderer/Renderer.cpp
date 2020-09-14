@@ -9,15 +9,29 @@ Renderer::Renderer(GLFWwindow* window, float width, float height, std::shared_pt
     this->width = width;
     this->height = height;
     this->entities = entities;
-    light = glm::normalize(light);
+}
+
+void Renderer::viewportSizeChanged()
+{
+    glfwGetFramebufferSize(window, &width, &height);
+    proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 100.0f);
 }
 
 void Renderer::init()
 {
     // This will identify our vertex buffer
     transformLoc = glGetUniformLocation(ourShader.ID, "transform");
-    mvpLoc = glGetUniformLocation(ourShader.ID, "mvp");
-    lightLoc = glGetUniformLocation(ourShader.ID, "lightDir");    
+    modelLoc = glGetUniformLocation(ourShader.ID, "model");
+    viewLoc = glGetUniformLocation(ourShader.ID, "view");
+    projectionLoc = glGetUniformLocation(ourShader.ID, "projection");  
+    lightPosLoc = glGetUniformLocation(ourShader.ID, "lightPos");
+    materialDiffuseColorLoc = glGetUniformLocation(ourShader.ID, "materialDiffuseColor");
+    materialAmbientColorLoc = glGetUniformLocation(ourShader.ID, "materialAmbientColor");
+    materialSpecularColorLoc = glGetUniformLocation(ourShader.ID, "materialSpecularColor");
+
+    lightColorLoc = glGetUniformLocation(ourShader.ID, "lightColor");    
+    lightPowerLoc = glGetUniformLocation(ourShader.ID, "lightPower");         
+   
 
     Texture texture("data/textures/wall.jpg");
     int nrAttributes;
@@ -28,9 +42,13 @@ void Renderer::init()
 
 
     glEnable(GL_DEPTH_TEST);
-
     glEnable(GL_CULL_FACE);
+    
     glCullFace(GL_BACK);
+
+    // Enable blending
+    glEnable(GL_BLEND);
+    //glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 }
 
@@ -58,14 +76,38 @@ void Renderer::initImGui()
 
 void Renderer::render()
 {
-
+    // ui stuff
     ImGui::Begin("Light Control");
-    ImGui::Text("Light: ");
-    ImGui::SliderFloat("x: ",&light.x,-1,1,"%.1f");
-    ImGui::SliderFloat("y: ",&light.y,-1,1,"%.1f");
-    ImGui::SliderFloat("z: ",&light.z,-1,1,"%.1f");
+    ImGui::Text("Light Position: ");
+    ImGui::InputFloat("x", &lightPos.x, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("y", &lightPos.y, 0.0f, 0.0f, "%f");
+    ImGui::InputFloat("z", &lightPos.z, 0.0f, 0.0f, "%f");
+    ImGui::Separator();
+    ImGui::Text("Light Color: ");
+    ImGui::SliderFloat("r", &lightColor.x, 0.0f, 1.0f, "%.1f");
+    ImGui::SliderFloat("g", &lightColor.y, 0.0f, 1.0f, "%.1f");
+    ImGui::SliderFloat("b", &lightColor.z, 0.0f, 1.0f, "%.1f");
+    ImGui::Separator();
+    ImGui::InputFloat("Power ", &lightPower, 0.0f, 0.0f, "%f");
+    ImGui::Separator();
     ImGui::End();
-    light = glm::normalize(light);
+
+    ImGui::Begin("Material Control");
+    ImGui::Text("Material Diffuse Color: ");
+    ImGui::SliderFloat("r##1", &materialDiffuseColor.x, 0.0f, 1.0f, "%.1f");
+    ImGui::SliderFloat("g##1", &materialDiffuseColor.y, 0.0f, 1.0f, "%.1f");
+    ImGui::SliderFloat("b##1", &materialDiffuseColor.z, 0.0f, 1.0f, "%.1f");;
+    ImGui::Separator();
+    ImGui::Text("Material Ambient Color: ");
+    ImGui::SliderFloat("r##2", &materialAmbientColor.x, 0.0f, 1.0f, "%.1f");
+    ImGui::SliderFloat("g##2", &materialAmbientColor.y, 0.0f, 1.0f, "%.1f");
+    ImGui::SliderFloat("b##2", &materialAmbientColor.z, 0.0f, 1.0f, "%.1f");
+    ImGui::Separator();
+    ImGui::Text("Material Specular Color: ");
+    ImGui::SliderFloat("r##3", &materialSpecularColor.x, 0.0f, 1.0f, "%.1f");
+    ImGui::SliderFloat("g##3", &materialSpecularColor.y, 0.0f, 1.0f, "%.1f");
+    ImGui::SliderFloat("b##3", &materialSpecularColor.z, 0.0f, 1.0f, "%.1f");
+    ImGui::End();
 
     // render
     // clear the colorbuffer
@@ -97,8 +139,19 @@ void Renderer::render()
         model = glm::scale(model, entity.scale);
 
 
-        glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, glm::value_ptr(proj * view * model));
-        glUniform3fv(lightLoc, 1, glm::value_ptr(light));
+        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(proj));
+
+        glUniform3fv(lightPosLoc, 1, glm::value_ptr(lightPos));
+        glUniform3fv(lightColorLoc, 1, glm::value_ptr(lightColor));
+
+        // Material stuff.
+        glUniform3fv(materialDiffuseColorLoc, 1, glm::value_ptr(materialDiffuseColor));
+        glUniform3fv(materialAmbientColorLoc, 1, glm::value_ptr(materialAmbientColor));
+        glUniform3fv(materialSpecularColorLoc, 1, glm::value_ptr(materialSpecularColor));
+
+        ourShader.setFloat("lightPower", lightPower);
 
         glBindVertexArray(entity.mesh->VAO);
         //glDrawArrays(GL_TRIANGLES, 0, mesh.indices.size());
