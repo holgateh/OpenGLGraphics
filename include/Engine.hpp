@@ -74,7 +74,7 @@ class Engine
         // mouse pos
         double lastMouseX = 0.0, lastMouseY = 0.0;
 
-        std::vector<std::shared_ptr<Entity>> entities;
+        std::shared_ptr<std::vector<Entity>> entities;
 
     public:
     private:

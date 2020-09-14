@@ -142,6 +142,249 @@ PhysicsEngine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/build
 .PHONY : PhysicsEngine/fast
 
+external/imgui/imgui.o: external/imgui/imgui.cpp.o
+
+.PHONY : external/imgui/imgui.o
+
+# target to build an object file
+external/imgui/imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui.cpp.o
+.PHONY : external/imgui/imgui.cpp.o
+
+external/imgui/imgui.i: external/imgui/imgui.cpp.i
+
+.PHONY : external/imgui/imgui.i
+
+# target to preprocess a source file
+external/imgui/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui.cpp.i
+.PHONY : external/imgui/imgui.cpp.i
+
+external/imgui/imgui.s: external/imgui/imgui.cpp.s
+
+.PHONY : external/imgui/imgui.s
+
+# target to generate assembly for a file
+external/imgui/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui.cpp.s
+.PHONY : external/imgui/imgui.cpp.s
+
+external/imgui/imgui_demo.o: external/imgui/imgui_demo.cpp.o
+
+.PHONY : external/imgui/imgui_demo.o
+
+# target to build an object file
+external/imgui/imgui_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_demo.cpp.o
+.PHONY : external/imgui/imgui_demo.cpp.o
+
+external/imgui/imgui_demo.i: external/imgui/imgui_demo.cpp.i
+
+.PHONY : external/imgui/imgui_demo.i
+
+# target to preprocess a source file
+external/imgui/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_demo.cpp.i
+.PHONY : external/imgui/imgui_demo.cpp.i
+
+external/imgui/imgui_demo.s: external/imgui/imgui_demo.cpp.s
+
+.PHONY : external/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+external/imgui/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_demo.cpp.s
+.PHONY : external/imgui/imgui_demo.cpp.s
+
+external/imgui/imgui_draw.o: external/imgui/imgui_draw.cpp.o
+
+.PHONY : external/imgui/imgui_draw.o
+
+# target to build an object file
+external/imgui/imgui_draw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_draw.cpp.o
+.PHONY : external/imgui/imgui_draw.cpp.o
+
+external/imgui/imgui_draw.i: external/imgui/imgui_draw.cpp.i
+
+.PHONY : external/imgui/imgui_draw.i
+
+# target to preprocess a source file
+external/imgui/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_draw.cpp.i
+.PHONY : external/imgui/imgui_draw.cpp.i
+
+external/imgui/imgui_draw.s: external/imgui/imgui_draw.cpp.s
+
+.PHONY : external/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+external/imgui/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_draw.cpp.s
+.PHONY : external/imgui/imgui_draw.cpp.s
+
+external/imgui/imgui_impl_glfw.o: external/imgui/imgui_impl_glfw.cpp.o
+
+.PHONY : external/imgui/imgui_impl_glfw.o
+
+# target to build an object file
+external/imgui/imgui_impl_glfw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_impl_glfw.cpp.o
+.PHONY : external/imgui/imgui_impl_glfw.cpp.o
+
+external/imgui/imgui_impl_glfw.i: external/imgui/imgui_impl_glfw.cpp.i
+
+.PHONY : external/imgui/imgui_impl_glfw.i
+
+# target to preprocess a source file
+external/imgui/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_impl_glfw.cpp.i
+.PHONY : external/imgui/imgui_impl_glfw.cpp.i
+
+external/imgui/imgui_impl_glfw.s: external/imgui/imgui_impl_glfw.cpp.s
+
+.PHONY : external/imgui/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+external/imgui/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_impl_glfw.cpp.s
+.PHONY : external/imgui/imgui_impl_glfw.cpp.s
+
+external/imgui/imgui_impl_opengl3.o: external/imgui/imgui_impl_opengl3.cpp.o
+
+.PHONY : external/imgui/imgui_impl_opengl3.o
+
+# target to build an object file
+external/imgui/imgui_impl_opengl3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_impl_opengl3.cpp.o
+.PHONY : external/imgui/imgui_impl_opengl3.cpp.o
+
+external/imgui/imgui_impl_opengl3.i: external/imgui/imgui_impl_opengl3.cpp.i
+
+.PHONY : external/imgui/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+external/imgui/imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_impl_opengl3.cpp.i
+.PHONY : external/imgui/imgui_impl_opengl3.cpp.i
+
+external/imgui/imgui_impl_opengl3.s: external/imgui/imgui_impl_opengl3.cpp.s
+
+.PHONY : external/imgui/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+external/imgui/imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_impl_opengl3.cpp.s
+.PHONY : external/imgui/imgui_impl_opengl3.cpp.s
+
+external/imgui/imgui_widgets.o: external/imgui/imgui_widgets.cpp.o
+
+.PHONY : external/imgui/imgui_widgets.o
+
+# target to build an object file
+external/imgui/imgui_widgets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_widgets.cpp.o
+.PHONY : external/imgui/imgui_widgets.cpp.o
+
+external/imgui/imgui_widgets.i: external/imgui/imgui_widgets.cpp.i
+
+.PHONY : external/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+external/imgui/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_widgets.cpp.i
+.PHONY : external/imgui/imgui_widgets.cpp.i
+
+external/imgui/imgui_widgets.s: external/imgui/imgui_widgets.cpp.s
+
+.PHONY : external/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+external/imgui/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/imgui/imgui_widgets.cpp.s
+.PHONY : external/imgui/imgui_widgets.cpp.s
+
+external/implot/implot.o: external/implot/implot.cpp.o
+
+.PHONY : external/implot/implot.o
+
+# target to build an object file
+external/implot/implot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/implot/implot.cpp.o
+.PHONY : external/implot/implot.cpp.o
+
+external/implot/implot.i: external/implot/implot.cpp.i
+
+.PHONY : external/implot/implot.i
+
+# target to preprocess a source file
+external/implot/implot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/implot/implot.cpp.i
+.PHONY : external/implot/implot.cpp.i
+
+external/implot/implot.s: external/implot/implot.cpp.s
+
+.PHONY : external/implot/implot.s
+
+# target to generate assembly for a file
+external/implot/implot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/implot/implot.cpp.s
+.PHONY : external/implot/implot.cpp.s
+
+external/implot/implot_demo.o: external/implot/implot_demo.cpp.o
+
+.PHONY : external/implot/implot_demo.o
+
+# target to build an object file
+external/implot/implot_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/implot/implot_demo.cpp.o
+.PHONY : external/implot/implot_demo.cpp.o
+
+external/implot/implot_demo.i: external/implot/implot_demo.cpp.i
+
+.PHONY : external/implot/implot_demo.i
+
+# target to preprocess a source file
+external/implot/implot_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/implot/implot_demo.cpp.i
+.PHONY : external/implot/implot_demo.cpp.i
+
+external/implot/implot_demo.s: external/implot/implot_demo.cpp.s
+
+.PHONY : external/implot/implot_demo.s
+
+# target to generate assembly for a file
+external/implot/implot_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/implot/implot_demo.cpp.s
+.PHONY : external/implot/implot_demo.cpp.s
+
+external/implot/implot_items.o: external/implot/implot_items.cpp.o
+
+.PHONY : external/implot/implot_items.o
+
+# target to build an object file
+external/implot/implot_items.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/implot/implot_items.cpp.o
+.PHONY : external/implot/implot_items.cpp.o
+
+external/implot/implot_items.i: external/implot/implot_items.cpp.i
+
+.PHONY : external/implot/implot_items.i
+
+# target to preprocess a source file
+external/implot/implot_items.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/implot/implot_items.cpp.i
+.PHONY : external/implot/implot_items.cpp.i
+
+external/implot/implot_items.s: external/implot/implot_items.cpp.s
+
+.PHONY : external/implot/implot_items.s
+
+# target to generate assembly for a file
+external/implot/implot_items.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/implot/implot_items.cpp.s
+.PHONY : external/implot/implot_items.cpp.s
+
 src/Engine.o: src/Engine.cpp.o
 
 .PHONY : src/Engine.o
@@ -168,6 +411,33 @@ src/Engine.s: src/Engine.cpp.s
 src/Engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.s
 .PHONY : src/Engine.cpp.s
+
+src/Entity.o: src/Entity.cpp.o
+
+.PHONY : src/Entity.o
+
+# target to build an object file
+src/Entity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o
+.PHONY : src/Entity.cpp.o
+
+src/Entity.i: src/Entity.cpp.i
+
+.PHONY : src/Entity.i
+
+# target to preprocess a source file
+src/Entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.i
+.PHONY : src/Entity.cpp.i
+
+src/Entity.s: src/Entity.cpp.s
+
+.PHONY : src/Entity.s
+
+# target to generate assembly for a file
+src/Entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.s
+.PHONY : src/Entity.cpp.s
 
 src/Renderer/Mesh.o: src/Renderer/Mesh.cpp.o
 
@@ -222,249 +492,6 @@ src/Renderer/Renderer.s: src/Renderer/Renderer.cpp.s
 src/Renderer/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.s
 .PHONY : src/Renderer/Renderer.cpp.s
-
-src/imgui/imgui.o: src/imgui/imgui.cpp.o
-
-.PHONY : src/imgui/imgui.o
-
-# target to build an object file
-src/imgui/imgui.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.o
-.PHONY : src/imgui/imgui.cpp.o
-
-src/imgui/imgui.i: src/imgui/imgui.cpp.i
-
-.PHONY : src/imgui/imgui.i
-
-# target to preprocess a source file
-src/imgui/imgui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.i
-.PHONY : src/imgui/imgui.cpp.i
-
-src/imgui/imgui.s: src/imgui/imgui.cpp.s
-
-.PHONY : src/imgui/imgui.s
-
-# target to generate assembly for a file
-src/imgui/imgui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui.cpp.s
-.PHONY : src/imgui/imgui.cpp.s
-
-src/imgui/imgui_demo.o: src/imgui/imgui_demo.cpp.o
-
-.PHONY : src/imgui/imgui_demo.o
-
-# target to build an object file
-src/imgui/imgui_demo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_demo.cpp.o
-.PHONY : src/imgui/imgui_demo.cpp.o
-
-src/imgui/imgui_demo.i: src/imgui/imgui_demo.cpp.i
-
-.PHONY : src/imgui/imgui_demo.i
-
-# target to preprocess a source file
-src/imgui/imgui_demo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_demo.cpp.i
-.PHONY : src/imgui/imgui_demo.cpp.i
-
-src/imgui/imgui_demo.s: src/imgui/imgui_demo.cpp.s
-
-.PHONY : src/imgui/imgui_demo.s
-
-# target to generate assembly for a file
-src/imgui/imgui_demo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_demo.cpp.s
-.PHONY : src/imgui/imgui_demo.cpp.s
-
-src/imgui/imgui_draw.o: src/imgui/imgui_draw.cpp.o
-
-.PHONY : src/imgui/imgui_draw.o
-
-# target to build an object file
-src/imgui/imgui_draw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_draw.cpp.o
-.PHONY : src/imgui/imgui_draw.cpp.o
-
-src/imgui/imgui_draw.i: src/imgui/imgui_draw.cpp.i
-
-.PHONY : src/imgui/imgui_draw.i
-
-# target to preprocess a source file
-src/imgui/imgui_draw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_draw.cpp.i
-.PHONY : src/imgui/imgui_draw.cpp.i
-
-src/imgui/imgui_draw.s: src/imgui/imgui_draw.cpp.s
-
-.PHONY : src/imgui/imgui_draw.s
-
-# target to generate assembly for a file
-src/imgui/imgui_draw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_draw.cpp.s
-.PHONY : src/imgui/imgui_draw.cpp.s
-
-src/imgui/imgui_impl_glfw.o: src/imgui/imgui_impl_glfw.cpp.o
-
-.PHONY : src/imgui/imgui_impl_glfw.o
-
-# target to build an object file
-src/imgui/imgui_impl_glfw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_glfw.cpp.o
-.PHONY : src/imgui/imgui_impl_glfw.cpp.o
-
-src/imgui/imgui_impl_glfw.i: src/imgui/imgui_impl_glfw.cpp.i
-
-.PHONY : src/imgui/imgui_impl_glfw.i
-
-# target to preprocess a source file
-src/imgui/imgui_impl_glfw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_glfw.cpp.i
-.PHONY : src/imgui/imgui_impl_glfw.cpp.i
-
-src/imgui/imgui_impl_glfw.s: src/imgui/imgui_impl_glfw.cpp.s
-
-.PHONY : src/imgui/imgui_impl_glfw.s
-
-# target to generate assembly for a file
-src/imgui/imgui_impl_glfw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_glfw.cpp.s
-.PHONY : src/imgui/imgui_impl_glfw.cpp.s
-
-src/imgui/imgui_impl_opengl3.o: src/imgui/imgui_impl_opengl3.cpp.o
-
-.PHONY : src/imgui/imgui_impl_opengl3.o
-
-# target to build an object file
-src/imgui/imgui_impl_opengl3.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_opengl3.cpp.o
-.PHONY : src/imgui/imgui_impl_opengl3.cpp.o
-
-src/imgui/imgui_impl_opengl3.i: src/imgui/imgui_impl_opengl3.cpp.i
-
-.PHONY : src/imgui/imgui_impl_opengl3.i
-
-# target to preprocess a source file
-src/imgui/imgui_impl_opengl3.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_opengl3.cpp.i
-.PHONY : src/imgui/imgui_impl_opengl3.cpp.i
-
-src/imgui/imgui_impl_opengl3.s: src/imgui/imgui_impl_opengl3.cpp.s
-
-.PHONY : src/imgui/imgui_impl_opengl3.s
-
-# target to generate assembly for a file
-src/imgui/imgui_impl_opengl3.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_impl_opengl3.cpp.s
-.PHONY : src/imgui/imgui_impl_opengl3.cpp.s
-
-src/imgui/imgui_widgets.o: src/imgui/imgui_widgets.cpp.o
-
-.PHONY : src/imgui/imgui_widgets.o
-
-# target to build an object file
-src/imgui/imgui_widgets.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_widgets.cpp.o
-.PHONY : src/imgui/imgui_widgets.cpp.o
-
-src/imgui/imgui_widgets.i: src/imgui/imgui_widgets.cpp.i
-
-.PHONY : src/imgui/imgui_widgets.i
-
-# target to preprocess a source file
-src/imgui/imgui_widgets.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_widgets.cpp.i
-.PHONY : src/imgui/imgui_widgets.cpp.i
-
-src/imgui/imgui_widgets.s: src/imgui/imgui_widgets.cpp.s
-
-.PHONY : src/imgui/imgui_widgets.s
-
-# target to generate assembly for a file
-src/imgui/imgui_widgets.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/imgui/imgui_widgets.cpp.s
-.PHONY : src/imgui/imgui_widgets.cpp.s
-
-src/implot/implot.o: src/implot/implot.cpp.o
-
-.PHONY : src/implot/implot.o
-
-# target to build an object file
-src/implot/implot.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.o
-.PHONY : src/implot/implot.cpp.o
-
-src/implot/implot.i: src/implot/implot.cpp.i
-
-.PHONY : src/implot/implot.i
-
-# target to preprocess a source file
-src/implot/implot.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.i
-.PHONY : src/implot/implot.cpp.i
-
-src/implot/implot.s: src/implot/implot.cpp.s
-
-.PHONY : src/implot/implot.s
-
-# target to generate assembly for a file
-src/implot/implot.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot.cpp.s
-.PHONY : src/implot/implot.cpp.s
-
-src/implot/implot_demo.o: src/implot/implot_demo.cpp.o
-
-.PHONY : src/implot/implot_demo.o
-
-# target to build an object file
-src/implot/implot_demo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.o
-.PHONY : src/implot/implot_demo.cpp.o
-
-src/implot/implot_demo.i: src/implot/implot_demo.cpp.i
-
-.PHONY : src/implot/implot_demo.i
-
-# target to preprocess a source file
-src/implot/implot_demo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.i
-.PHONY : src/implot/implot_demo.cpp.i
-
-src/implot/implot_demo.s: src/implot/implot_demo.cpp.s
-
-.PHONY : src/implot/implot_demo.s
-
-# target to generate assembly for a file
-src/implot/implot_demo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_demo.cpp.s
-.PHONY : src/implot/implot_demo.cpp.s
-
-src/implot/implot_items.o: src/implot/implot_items.cpp.o
-
-.PHONY : src/implot/implot_items.o
-
-# target to build an object file
-src/implot/implot_items.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.o
-.PHONY : src/implot/implot_items.cpp.o
-
-src/implot/implot_items.i: src/implot/implot_items.cpp.i
-
-.PHONY : src/implot/implot_items.i
-
-# target to preprocess a source file
-src/implot/implot_items.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.i
-.PHONY : src/implot/implot_items.cpp.i
-
-src/implot/implot_items.s: src/implot/implot_items.cpp.s
-
-.PHONY : src/implot/implot_items.s
-
-# target to generate assembly for a file
-src/implot/implot_items.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/implot/implot_items.cpp.s
-.PHONY : src/implot/implot_items.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -610,42 +637,45 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... PhysicsEngine"
+	@echo "... external/imgui/imgui.o"
+	@echo "... external/imgui/imgui.i"
+	@echo "... external/imgui/imgui.s"
+	@echo "... external/imgui/imgui_demo.o"
+	@echo "... external/imgui/imgui_demo.i"
+	@echo "... external/imgui/imgui_demo.s"
+	@echo "... external/imgui/imgui_draw.o"
+	@echo "... external/imgui/imgui_draw.i"
+	@echo "... external/imgui/imgui_draw.s"
+	@echo "... external/imgui/imgui_impl_glfw.o"
+	@echo "... external/imgui/imgui_impl_glfw.i"
+	@echo "... external/imgui/imgui_impl_glfw.s"
+	@echo "... external/imgui/imgui_impl_opengl3.o"
+	@echo "... external/imgui/imgui_impl_opengl3.i"
+	@echo "... external/imgui/imgui_impl_opengl3.s"
+	@echo "... external/imgui/imgui_widgets.o"
+	@echo "... external/imgui/imgui_widgets.i"
+	@echo "... external/imgui/imgui_widgets.s"
+	@echo "... external/implot/implot.o"
+	@echo "... external/implot/implot.i"
+	@echo "... external/implot/implot.s"
+	@echo "... external/implot/implot_demo.o"
+	@echo "... external/implot/implot_demo.i"
+	@echo "... external/implot/implot_demo.s"
+	@echo "... external/implot/implot_items.o"
+	@echo "... external/implot/implot_items.i"
+	@echo "... external/implot/implot_items.s"
 	@echo "... src/Engine.o"
 	@echo "... src/Engine.i"
 	@echo "... src/Engine.s"
+	@echo "... src/Entity.o"
+	@echo "... src/Entity.i"
+	@echo "... src/Entity.s"
 	@echo "... src/Renderer/Mesh.o"
 	@echo "... src/Renderer/Mesh.i"
 	@echo "... src/Renderer/Mesh.s"
 	@echo "... src/Renderer/Renderer.o"
 	@echo "... src/Renderer/Renderer.i"
 	@echo "... src/Renderer/Renderer.s"
-	@echo "... src/imgui/imgui.o"
-	@echo "... src/imgui/imgui.i"
-	@echo "... src/imgui/imgui.s"
-	@echo "... src/imgui/imgui_demo.o"
-	@echo "... src/imgui/imgui_demo.i"
-	@echo "... src/imgui/imgui_demo.s"
-	@echo "... src/imgui/imgui_draw.o"
-	@echo "... src/imgui/imgui_draw.i"
-	@echo "... src/imgui/imgui_draw.s"
-	@echo "... src/imgui/imgui_impl_glfw.o"
-	@echo "... src/imgui/imgui_impl_glfw.i"
-	@echo "... src/imgui/imgui_impl_glfw.s"
-	@echo "... src/imgui/imgui_impl_opengl3.o"
-	@echo "... src/imgui/imgui_impl_opengl3.i"
-	@echo "... src/imgui/imgui_impl_opengl3.s"
-	@echo "... src/imgui/imgui_widgets.o"
-	@echo "... src/imgui/imgui_widgets.i"
-	@echo "... src/imgui/imgui_widgets.s"
-	@echo "... src/implot/implot.o"
-	@echo "... src/implot/implot.i"
-	@echo "... src/implot/implot.s"
-	@echo "... src/implot/implot_demo.o"
-	@echo "... src/implot/implot_demo.i"
-	@echo "... src/implot/implot_demo.s"
-	@echo "... src/implot/implot_items.o"
-	@echo "... src/implot/implot_items.i"
-	@echo "... src/implot/implot_items.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -10,10 +10,13 @@ out vec2 TexCoord;
 uniform float colour;
 uniform mat4 mvp;
 uniform vec3 lightDir;
+uniform vec3 lightPos;
+uniform vec3 cameraDir;
+uniform vec3 cameraPos;
 
 void main()
 {
-
+    
     gl_Position = mvp * vec4(aPos, 1);
     float nColor = -1.0f * dot(aNorm , lightDir); // set ourColor to the input color we got from the vertex data
     ourColor = vec3(nColor, nColor, nColor);

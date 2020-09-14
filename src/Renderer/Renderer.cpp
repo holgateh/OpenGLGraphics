@@ -2,13 +2,13 @@
 Renderer::Renderer()
 {}
 
-Renderer::Renderer(GLFWwindow* window, float width, float height) :
+Renderer::Renderer(GLFWwindow* window, float width, float height, std::shared_ptr<std::vector<Entity>>  entities) :
     ourShader(Shader("data/shaders/vert.sh", "data/shaders/frag.sh"))
 {
     this->window = window;
     this->width = width;
     this->height = height;
-
+    this->entities = entities;
     light = glm::normalize(light);
 }
 
@@ -55,11 +55,6 @@ void Renderer::initImGui()
     ImGui::StyleColorsDark();
 }
 
-void Renderer::addEntity(std::shared_ptr<Entity> entity)
-{
-    entities.push_back(entity);
-}
-
 
 void Renderer::render()
 {
@@ -79,29 +74,36 @@ void Renderer::render()
 
     // feed inputs to dear imgui, start new frame
 
-    //texture.bind();
+    //std::cout << "entites size " << entities.get()->size() << "\n";
 
+    //texture.bind();
+    float timeValue = glfwGetTime();
     //now render the triangle
 
+    //Use our default shader.
     ourShader.use();
     ourShader.setFloat("colour", sin(timeValue));
 
-    for(auto& entity : entities)
+    //Render each entity in the scence.
+    for(auto& entity : *(entities.get()))
     {
         model = glm::mat4(1.0f);
-        model = glm::rotate(model, glm::radians(entity->rotation.x), glm::vec3(0.0f, 1.0f, 0.0f));
-        model = glm::rotate(model, glm::radians(entity->rotation.y), glm::vec3(1.0f, 0.0f, 0.0f));
-        model = glm::rotate(model, glm::radians(entity->rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
-        model = glm::translate(model, entity->pos);
+        model = glm::translate(model, entity.pos);
+        glm::quat rotation = glm::angleAxis(entity.rotation.x, glm::vec3(0.0, 1.0f, 0.0f)) *
+                             glm::angleAxis(entity.rotation.y, glm::vec3(1.0, 0.0f, 0.0f)) *
+                             glm::angleAxis(entity.rotation.z, glm::vec3(0.0, 0.0f, 1.0f));
+            
+        model = model * glm::toMat4(rotation);
+        model = glm::scale(model, entity.scale);
 
 
         glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, glm::value_ptr(proj * view * model));
         glUniform3fv(lightLoc, 1, glm::value_ptr(light));
 
-        glBindVertexArray(entity->mesh->VAO);
+        glBindVertexArray(entity.mesh->VAO);
         //glDrawArrays(GL_TRIANGLES, 0, mesh.indices.size());
 
-        glDrawElements(GL_TRIANGLES, entity->mesh->indices.size(), GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, entity.mesh->indices.size(), GL_UNSIGNED_INT, 0);
     }
 
     // Render dear imgui into screen
@@ -116,9 +118,9 @@ void Renderer::render()
 uint32_t Renderer::getNumVertices()
 {
     unsigned int sum = 0;
-    for (auto& entity : entities)
+    for (auto& entity : *(entities.get()))
     {
-        sum += entity->mesh->vertices.size();
+        sum += entity.mesh->vertices.size();
     }
 
     return sum;
@@ -127,9 +129,9 @@ uint32_t Renderer::getNumVertices()
 uint32_t Renderer::getNumTriangles()
 {
     unsigned int sum = 0;
-    for (auto& entity : entities)
+    for (auto& entity : *(entities.get()))
     {
-        sum += entity->mesh->indices.size();
+        sum += entity.mesh->indices.size();
     }
     return sum / 3;
 }

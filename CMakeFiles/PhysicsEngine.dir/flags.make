@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/harrison/Programming/PhysicsEngine/include -I/home/harrison/Programming/PhysicsEngine/include/imgui -I/home/harrison/Programming/PhysicsEngine/include/implot -I/home/harrison/Programming/PhysicsEngine/include/stb
+CXX_INCLUDES = -I/home/harrison/Programming/PhysicsEngine/include -I/home/harrison/Programming/PhysicsEngine/external -I/home/harrison/Programming/PhysicsEngine/external/imgui -I/home/harrison/Programming/PhysicsEngine/external/implot -I/home/harrison/Programming/PhysicsEngine/external/stb
 
 CXX_FLAGS = 
 

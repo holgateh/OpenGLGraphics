@@ -17,6 +17,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/quaternion.hpp>
 
 
 
@@ -38,13 +39,12 @@
 class Renderer
 {
     private:
-        unsigned int transformLoc;
-        unsigned int mvpLoc;
-        unsigned int lightLoc;
+        unsigned int transformLoc = 0;
+        unsigned int mvpLoc = 0;
+        unsigned int lightLoc = 0;
 
         glm::vec3 light = {0.0f, -1.0f, 0.0f};
-        std::vector<Mesh> meshes;
-        std::vector<std::shared_ptr<Entity>> entities;
+        std::shared_ptr<std::vector<Entity>> entities;
 
         Shader ourShader;
         std::string SHADER_PATH = "data/shaders/";
@@ -56,7 +56,7 @@ class Renderer
         glm::mat4 proj, model, view;
     private:
     public:
-        Renderer(GLFWwindow* window, float width, float height);
+        Renderer(GLFWwindow* window, float width, float height, std::shared_ptr<std::vector<Entity>>  entities);
         Renderer();
         void init();
         void startNewImGuiFrame();
@@ -64,7 +64,6 @@ class Renderer
         void render();
         void renderUI();
         void cleanup();
-        void addEntity(std::shared_ptr<Entity> entity);
         uint32_t getNumVertices();
         uint32_t getNumTriangles();
 };
