@@ -10,6 +10,10 @@
 Engine.hpp
 /home/harrison/Programming/PhysicsEngine/src/Engine.hpp
 
+/home/harrison/Programming/PhysicsEngine/src/Entity.cpp
+Entity.hpp
+/home/harrison/Programming/PhysicsEngine/src/Entity.hpp
+
 /home/harrison/Programming/PhysicsEngine/src/Renderer/Renderer.cpp
 Renderer/Renderer.hpp
 /home/harrison/Programming/PhysicsEngine/src/Renderer/Renderer/Renderer.hpp
@@ -54,6 +58,12 @@ external/implot/implot.h
 imgui.h
 external/implot/imgui.h
 
+include/CircularQueue.hpp
+vector
+-
+iostream
+-
+
 include/Engine.hpp
 stdio.h
 -
@@ -97,14 +107,14 @@ imgui_impl_opengl3.h
 include/imgui_impl_opengl3.h
 implot.h
 include/implot.h
-tools/Shader.hpp
-include/tools/Shader.hpp
-tools/Texture.hpp
-include/tools/Texture.hpp
-tools/Timer.hpp
-include/tools/Timer.hpp
-tools/CircularQueue.hpp
-include/tools/CircularQueue.hpp
+Shader.hpp
+include/Shader.hpp
+Texture.hpp
+include/Texture.hpp
+Timer.hpp
+include/Timer.hpp
+CircularQueue.hpp
+include/CircularQueue.hpp
 Entity.hpp
 include/Entity.hpp
 Renderer/Renderer.hpp
@@ -123,10 +133,16 @@ glm/gtc/type_ptr.hpp
 -
 Renderer/Mesh.hpp
 include/Renderer/Mesh.hpp
-tools/Shader.hpp
-include/tools/Shader.hpp
-tools/Texture.hpp
-include/tools/Texture.hpp
+Shader.hpp
+include/Shader.hpp
+Texture.hpp
+include/Texture.hpp
+Material.hpp
+include/Material.hpp
+
+include/Material.hpp
+glm/glm.hpp
+-
 
 include/Renderer/Mesh.hpp
 vector
@@ -149,8 +165,8 @@ glm/gtc/matrix_transform.hpp
 -
 glm/gtc/type_ptr.hpp
 -
-tools/Vertex.hpp
-include/Renderer/tools/Vertex.hpp
+Vertex.hpp
+include/Renderer/Vertex.hpp
 
 include/Renderer/Renderer.hpp
 Renderer/Mesh.hpp
@@ -181,24 +197,18 @@ imgui_impl_opengl3.h
 include/Renderer/imgui_impl_opengl3.h
 implot.h
 include/Renderer/implot.h
-tools/Shader.hpp
-include/Renderer/tools/Shader.hpp
-tools/Texture.hpp
-include/Renderer/tools/Texture.hpp
-tools/Vertex.hpp
-include/Renderer/tools/Vertex.hpp
+Shader.hpp
+include/Renderer/Shader.hpp
+Texture.hpp
+include/Renderer/Texture.hpp
+Vertex.hpp
+include/Renderer/Vertex.hpp
 Renderer/Mesh.hpp
 include/Renderer/Renderer/Mesh.hpp
 Entity.hpp
 include/Renderer/Entity.hpp
 
-include/tools/CircularQueue.hpp
-vector
--
-iostream
--
-
-include/tools/Shader.hpp
+include/Shader.hpp
 GL/glew.h
 -
 GLFW/glfw3.h
@@ -215,8 +225,14 @@ iostream
 -
 glm/glm.hpp
 -
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+glm/gtx/quaternion.hpp
+-
 
-include/tools/Texture.hpp
+include/Texture.hpp
 GL/glew.h
 -
 GLFW/glfw3.h
@@ -232,11 +248,11 @@ sstream
 iostream
 -
 
-include/tools/Timer.hpp
+include/Timer.hpp
 chrono
 -
 
-include/tools/Vertex.hpp
+include/Vertex.hpp
 glm/glm.hpp
 -
 glm/gtc/matrix_transform.hpp

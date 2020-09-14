@@ -156,11 +156,6 @@ void Engine::update()
 {
         // update 
         updateCamera();
-        glm::mat4 model = glm::mat4(1.0f);
-        renderer.model = glm::rotate(model, glm::radians((float)glfwGetTime()*0), glm::vec3(1.0f, 1.0f, 0.0f)); 
-        const float radius = 10.0f;
-        float camX = sin(glfwGetTime()) * radius;
-        float camZ = cos(glfwGetTime()) * radius;
         renderer.view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 
 }
@@ -271,8 +266,8 @@ Engine::Engine() : entities(std::make_shared<std::vector<Entity>>())
 
     renderer.init();
 
-    auto model1 = Entity();
-    auto model2 = Entity();
+    auto model1 = Entity("model1");
+    auto model2 = Entity("model2");
     model1.mesh = std::make_shared<Mesh>("data/meshes/test.obj");
     model2.mesh = std::make_shared<Mesh>("data/meshes/platform.obj");
     model1.mesh->bufferMesh();

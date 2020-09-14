@@ -35,10 +35,10 @@
 #include "implot.h"
 
 
-#include "tools/Shader.hpp"
-#include "tools/Texture.hpp"
-#include "tools/Timer.hpp"
-#include "tools/CircularQueue.hpp"
+#include "Shader.hpp"
+#include "Texture.hpp"
+#include "Timer.hpp"
+#include "CircularQueue.hpp"
 #include "Entity.hpp"
 
 #include "Renderer/Renderer.hpp"

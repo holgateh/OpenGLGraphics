@@ -1,12 +1,26 @@
 #version 330 core
+struct Material {
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+    float shininess;
+}; 
+
+struct Light {
+    vec3 position;
+    vec3 color;
+    float power;
+};
+  
+uniform Material material;
+uniform Light light;
+
 layout (location = 0) in vec3 aPos;   // the position variable has attribute position 0
 layout (location = 1) in vec3 aColor; // the color variable has attribute position 1
-
 layout (location = 2) in vec3 aNorm; // the color variable has attribute position 1
 layout (location = 3) in vec2 aTexCoord; // the uv coordinate has attribute position 2
   
-out vec3 ourColor; // output a color to the fragment shader
-out vec2 TexCoord;
+
 
 uniform mat4 model;
 uniform mat4 view;
@@ -18,6 +32,10 @@ uniform vec3 materialSpecularColor;
 
 uniform vec3 lightColor;
 uniform float lightPower;
+
+
+out vec3 ourColor; // output a color to the fragment shader
+out vec2 TexCoord;
 
 void main()
 {

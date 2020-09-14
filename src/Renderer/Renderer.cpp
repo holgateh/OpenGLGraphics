@@ -19,20 +19,6 @@ void Renderer::viewportSizeChanged()
 
 void Renderer::init()
 {
-    // This will identify our vertex buffer
-    transformLoc = glGetUniformLocation(ourShader.ID, "transform");
-    modelLoc = glGetUniformLocation(ourShader.ID, "model");
-    viewLoc = glGetUniformLocation(ourShader.ID, "view");
-    projectionLoc = glGetUniformLocation(ourShader.ID, "projection");  
-    lightPosLoc = glGetUniformLocation(ourShader.ID, "lightPos");
-    materialDiffuseColorLoc = glGetUniformLocation(ourShader.ID, "materialDiffuseColor");
-    materialAmbientColorLoc = glGetUniformLocation(ourShader.ID, "materialAmbientColor");
-    materialSpecularColorLoc = glGetUniformLocation(ourShader.ID, "materialSpecularColor");
-
-    lightColorLoc = glGetUniformLocation(ourShader.ID, "lightColor");    
-    lightPowerLoc = glGetUniformLocation(ourShader.ID, "lightPower");         
-   
-
     Texture texture("data/textures/wall.jpg");
     int nrAttributes;
     glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
@@ -92,22 +78,25 @@ void Renderer::render()
     ImGui::Separator();
     ImGui::End();
 
-    ImGui::Begin("Material Control");
-    ImGui::Text("Material Diffuse Color: ");
-    ImGui::SliderFloat("r##1", &materialDiffuseColor.x, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("g##1", &materialDiffuseColor.y, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("b##1", &materialDiffuseColor.z, 0.0f, 1.0f, "%.1f");;
-    ImGui::Separator();
-    ImGui::Text("Material Ambient Color: ");
-    ImGui::SliderFloat("r##2", &materialAmbientColor.x, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("g##2", &materialAmbientColor.y, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("b##2", &materialAmbientColor.z, 0.0f, 1.0f, "%.1f");
-    ImGui::Separator();
-    ImGui::Text("Material Specular Color: ");
-    ImGui::SliderFloat("r##3", &materialSpecularColor.x, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("g##3", &materialSpecularColor.y, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("b##3", &materialSpecularColor.z, 0.0f, 1.0f, "%.1f");
-    ImGui::End();
+    for(auto& entity : *(entities.get()))
+    {
+        ImGui::Begin(("Material Control: " + entity.ID).c_str());
+        ImGui::Text("Material Diffuse Color: ");
+        ImGui::SliderFloat("r##1", &entity.material.diffuse.x, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("g##1", &entity.material.diffuse.y, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("b##1", &entity.material.diffuse.z, 0.0f, 1.0f, "%.1f");;
+        ImGui::Separator();
+        ImGui::Text("Material Ambient Color: ");
+        ImGui::SliderFloat("r##2", &entity.material.ambient.x, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("g##2", &entity.material.ambient.y, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("b##2", &entity.material.ambient.z, 0.0f, 1.0f, "%.1f");
+        ImGui::Separator();
+        ImGui::Text("Material Specular Color: ");
+        ImGui::SliderFloat("r##3", &entity.material.specular.x, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("g##3", &entity.material.specular.y, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("b##3", &entity.material.specular.z, 0.0f, 1.0f, "%.1f");
+        ImGui::End();
+    }
 
     // render
     // clear the colorbuffer
@@ -124,11 +113,10 @@ void Renderer::render()
 
     //Use our default shader.
     ourShader.use();
-    ourShader.setFloat("colour", sin(timeValue));
-
     //Render each entity in the scence.
     for(auto& entity : *(entities.get()))
     {
+        //Calculate new 
         model = glm::mat4(1.0f);
         model = glm::translate(model, entity.pos);
         glm::quat rotation = glm::angleAxis(entity.rotation.x, glm::vec3(0.0, 1.0f, 0.0f)) *
@@ -138,19 +126,16 @@ void Renderer::render()
         model = model * glm::toMat4(rotation);
         model = glm::scale(model, entity.scale);
 
-
-        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-        glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(proj));
-
-        glUniform3fv(lightPosLoc, 1, glm::value_ptr(lightPos));
-        glUniform3fv(lightColorLoc, 1, glm::value_ptr(lightColor));
+        ourShader.setMat4("model", model);
+        ourShader.setMat4("view", view);
+        ourShader.setMat4("projection", proj);
+        ourShader.setVec3("lightPos", lightPos);
+        ourShader.setVec3("lightColor", lightColor);
 
         // Material stuff.
-        glUniform3fv(materialDiffuseColorLoc, 1, glm::value_ptr(materialDiffuseColor));
-        glUniform3fv(materialAmbientColorLoc, 1, glm::value_ptr(materialAmbientColor));
-        glUniform3fv(materialSpecularColorLoc, 1, glm::value_ptr(materialSpecularColor));
-
+        ourShader.setVec3("materialDiffuseColor", entity.material.diffuse);
+        ourShader.setVec3("materialAmbientColor", entity.material.ambient);
+        ourShader.setVec3("materialSpecularColor", entity.material.specular);
         ourShader.setFloat("lightPower", lightPower);
 
         glBindVertexArray(entity.mesh->VAO);

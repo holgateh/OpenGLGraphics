@@ -28,9 +28,9 @@
 // Implot
 #include "implot.h"
 
-#include "tools/Shader.hpp"
-#include "tools/Texture.hpp"
-#include "tools/Vertex.hpp"
+#include "Shader.hpp"
+#include "Texture.hpp"
+#include "Vertex.hpp"
 #include "Renderer/Mesh.hpp"
 #include "Entity.hpp"
 

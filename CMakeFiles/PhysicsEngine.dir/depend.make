@@ -69,27 +69,31 @@ CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: external/imgui/imgui.h
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: external/imgui/imgui_impl_glfw.h
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: external/imgui/imgui_impl_opengl3.h
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: external/implot/implot.h
+CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/CircularQueue.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Engine.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Entity.hpp
+CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Material.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Renderer/Renderer.hpp
-CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/tools/CircularQueue.hpp
-CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/tools/Shader.hpp
-CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/tools/Texture.hpp
-CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/tools/Timer.hpp
-CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/tools/Vertex.hpp
+CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Shader.hpp
+CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Texture.hpp
+CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Timer.hpp
+CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Vertex.hpp
 
 CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: src/Entity.cpp
 CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/Entity.hpp
+CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/Material.hpp
 CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/Renderer/Mesh.hpp
-CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/tools/Shader.hpp
-CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/tools/Texture.hpp
-CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/tools/Vertex.hpp
+CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/Shader.hpp
+CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/Texture.hpp
+CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/Vertex.hpp
+
+CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o: src/MeshHelper.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: src/Renderer/Mesh.cpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: external/tinyobjloader/tinyobjloader.h
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: include/Renderer/Mesh.hpp
-CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: include/tools/Vertex.hpp
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: include/Vertex.hpp
 
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: src/Renderer/Renderer.cpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: external/imgui/imconfig.h
@@ -98,11 +102,22 @@ CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: external/imgui/imgui_i
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: external/imgui/imgui_impl_opengl3.h
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: external/implot/implot.h
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Entity.hpp
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Material.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Renderer/Renderer.hpp
-CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/tools/Shader.hpp
-CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/tools/Texture.hpp
-CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/tools/Vertex.hpp
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Shader.hpp
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Texture.hpp
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Vertex.hpp
+
+CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.o: src/Shader.cpp
+CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.o: include/Shader.hpp
+
+CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.o: src/Texture.cpp
+CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.o: external/stb/stb_image.h
+CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.o: include/Texture.hpp
+
+CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.o: src/Timer.cpp
+CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.o: include/Timer.hpp
 
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: external/imgui/imconfig.h
@@ -110,25 +125,14 @@ CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: external/imgui/imgui.h
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: external/imgui/imgui_impl_glfw.h
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: external/imgui/imgui_impl_opengl3.h
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: external/implot/implot.h
+CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/CircularQueue.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Engine.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Entity.hpp
+CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Material.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Renderer/Renderer.hpp
-CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/tools/CircularQueue.hpp
-CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/tools/Shader.hpp
-CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/tools/Texture.hpp
-CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/tools/Timer.hpp
-CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/tools/Vertex.hpp
-
-CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o: src/tools/MeshHelper.cpp
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o: src/tools/Shader.cpp
-CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o: include/tools/Shader.hpp
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o: src/tools/Texture.cpp
-CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o: external/stb/stb_image.h
-CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o: include/tools/Texture.hpp
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o: src/tools/Timer.cpp
-CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o: include/tools/Timer.hpp
+CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Shader.hpp
+CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Texture.hpp
+CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Timer.hpp
+CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Vertex.hpp
 

@@ -219,9 +219,22 @@ CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/Entity.cpp -o CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.s
 
+CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
+CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o: src/MeshHelper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/MeshHelper.cpp
+
+CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harrison/Programming/PhysicsEngine/src/MeshHelper.cpp > CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.i
+
+CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/MeshHelper.cpp -o CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.s
+
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: src/Renderer/Mesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/Renderer/Mesh.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.i: cmake_force
@@ -234,7 +247,7 @@ CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.s: cmake_force
 
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: src/Renderer/Renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/Renderer/Renderer.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.i: cmake_force
@@ -245,9 +258,48 @@ CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/Renderer/Renderer.cpp -o CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.s
 
+CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
+CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.o: src/Shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/Shader.cpp
+
+CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harrison/Programming/PhysicsEngine/src/Shader.cpp > CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.i
+
+CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/Shader.cpp -o CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.s
+
+CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
+CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.o: src/Texture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/Texture.cpp
+
+CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harrison/Programming/PhysicsEngine/src/Texture.cpp > CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.i
+
+CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/Texture.cpp -o CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.s
+
+CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
+CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.o: src/Timer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/Timer.cpp
+
+CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harrison/Programming/PhysicsEngine/src/Timer.cpp > CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.i
+
+CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/Timer.cpp -o CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.s
+
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/main.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/main.cpp
 
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.i: cmake_force
@@ -257,58 +309,6 @@ CMakeFiles/PhysicsEngine.dir/src/main.cpp.i: cmake_force
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/main.cpp -o CMakeFiles/PhysicsEngine.dir/src/main.cpp.s
-
-CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
-CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o: src/tools/MeshHelper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/tools/MeshHelper.cpp
-
-CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harrison/Programming/PhysicsEngine/src/tools/MeshHelper.cpp > CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.i
-
-CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/tools/MeshHelper.cpp -o CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.s
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
-CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o: src/tools/Shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/tools/Shader.cpp
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harrison/Programming/PhysicsEngine/src/tools/Shader.cpp > CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.i
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/tools/Shader.cpp -o CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.s
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
-CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o: src/tools/Texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/tools/Texture.cpp
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harrison/Programming/PhysicsEngine/src/tools/Texture.cpp > CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.i
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/tools/Texture.cpp -o CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.s
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o: CMakeFiles/PhysicsEngine.dir/flags.make
-CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o: src/tools/Timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/harrison/Programming/PhysicsEngine/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o -c /home/harrison/Programming/PhysicsEngine/src/tools/Timer.cpp
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/harrison/Programming/PhysicsEngine/src/tools/Timer.cpp > CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.i
-
-CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/harrison/Programming/PhysicsEngine/src/tools/Timer.cpp -o CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.s
 
 # Object files for target PhysicsEngine
 PhysicsEngine_OBJECTS = \
@@ -323,13 +323,13 @@ PhysicsEngine_OBJECTS = \
 "CMakeFiles/PhysicsEngine.dir/external/implot/implot_items.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o" \
+"CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o" \
 "CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o" \
-"CMakeFiles/PhysicsEngine.dir/src/main.cpp.o" \
-"CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o" \
-"CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o" \
-"CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o" \
-"CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o"
+"CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.o" \
+"CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.o" \
+"CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.o" \
+"CMakeFiles/PhysicsEngine.dir/src/main.cpp.o"
 
 # External object files for target PhysicsEngine
 PhysicsEngine_EXTERNAL_OBJECTS =
@@ -345,13 +345,13 @@ PhysicsEngine: CMakeFiles/PhysicsEngine.dir/external/implot/implot_demo.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/external/implot/implot_items.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o
+PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o
+PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.o
+PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.o
+PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/main.cpp.o
-PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o
-PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o
-PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o
-PhysicsEngine: CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/build.make
 PhysicsEngine: /usr/lib/libGLEW.so
 PhysicsEngine: CMakeFiles/PhysicsEngine.dir/link.txt

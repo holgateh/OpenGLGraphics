@@ -4,7 +4,7 @@ project(PhysicsEngine)
 include_directories(include external external/imgui external/implot external/stb)
 
 
-file(GLOB SOURCES "src/*.cpp" "src/tools/*.cpp" "src/Renderer/*.cpp" "external/imgui/*.cpp" "external/implot/*.cpp" )
+file(GLOB SOURCES "src/*.cpp" "src/Renderer/*.cpp" "external/imgui/*.cpp" "external/implot/*.cpp" )
 
 add_executable(PhysicsEngine ${SOURCES})
 

@@ -439,6 +439,33 @@ src/Entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.s
 .PHONY : src/Entity.cpp.s
 
+src/MeshHelper.o: src/MeshHelper.cpp.o
+
+.PHONY : src/MeshHelper.o
+
+# target to build an object file
+src/MeshHelper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o
+.PHONY : src/MeshHelper.cpp.o
+
+src/MeshHelper.i: src/MeshHelper.cpp.i
+
+.PHONY : src/MeshHelper.i
+
+# target to preprocess a source file
+src/MeshHelper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.i
+.PHONY : src/MeshHelper.cpp.i
+
+src/MeshHelper.s: src/MeshHelper.cpp.s
+
+.PHONY : src/MeshHelper.s
+
+# target to generate assembly for a file
+src/MeshHelper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.s
+.PHONY : src/MeshHelper.cpp.s
+
 src/Renderer/Mesh.o: src/Renderer/Mesh.cpp.o
 
 .PHONY : src/Renderer/Mesh.o
@@ -493,6 +520,87 @@ src/Renderer/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.s
 .PHONY : src/Renderer/Renderer.cpp.s
 
+src/Shader.o: src/Shader.cpp.o
+
+.PHONY : src/Shader.o
+
+# target to build an object file
+src/Shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.o
+.PHONY : src/Shader.cpp.o
+
+src/Shader.i: src/Shader.cpp.i
+
+.PHONY : src/Shader.i
+
+# target to preprocess a source file
+src/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.i
+.PHONY : src/Shader.cpp.i
+
+src/Shader.s: src/Shader.cpp.s
+
+.PHONY : src/Shader.s
+
+# target to generate assembly for a file
+src/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.s
+.PHONY : src/Shader.cpp.s
+
+src/Texture.o: src/Texture.cpp.o
+
+.PHONY : src/Texture.o
+
+# target to build an object file
+src/Texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.o
+.PHONY : src/Texture.cpp.o
+
+src/Texture.i: src/Texture.cpp.i
+
+.PHONY : src/Texture.i
+
+# target to preprocess a source file
+src/Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.i
+.PHONY : src/Texture.cpp.i
+
+src/Texture.s: src/Texture.cpp.s
+
+.PHONY : src/Texture.s
+
+# target to generate assembly for a file
+src/Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Texture.cpp.s
+.PHONY : src/Texture.cpp.s
+
+src/Timer.o: src/Timer.cpp.o
+
+.PHONY : src/Timer.o
+
+# target to build an object file
+src/Timer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.o
+.PHONY : src/Timer.cpp.o
+
+src/Timer.i: src/Timer.cpp.i
+
+.PHONY : src/Timer.i
+
+# target to preprocess a source file
+src/Timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.i
+.PHONY : src/Timer.cpp.i
+
+src/Timer.s: src/Timer.cpp.s
+
+.PHONY : src/Timer.s
+
+# target to generate assembly for a file
+src/Timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Timer.cpp.s
+.PHONY : src/Timer.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -519,114 +627,6 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
-
-src/tools/MeshHelper.o: src/tools/MeshHelper.cpp.o
-
-.PHONY : src/tools/MeshHelper.o
-
-# target to build an object file
-src/tools/MeshHelper.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.o
-.PHONY : src/tools/MeshHelper.cpp.o
-
-src/tools/MeshHelper.i: src/tools/MeshHelper.cpp.i
-
-.PHONY : src/tools/MeshHelper.i
-
-# target to preprocess a source file
-src/tools/MeshHelper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.i
-.PHONY : src/tools/MeshHelper.cpp.i
-
-src/tools/MeshHelper.s: src/tools/MeshHelper.cpp.s
-
-.PHONY : src/tools/MeshHelper.s
-
-# target to generate assembly for a file
-src/tools/MeshHelper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/MeshHelper.cpp.s
-.PHONY : src/tools/MeshHelper.cpp.s
-
-src/tools/Shader.o: src/tools/Shader.cpp.o
-
-.PHONY : src/tools/Shader.o
-
-# target to build an object file
-src/tools/Shader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.o
-.PHONY : src/tools/Shader.cpp.o
-
-src/tools/Shader.i: src/tools/Shader.cpp.i
-
-.PHONY : src/tools/Shader.i
-
-# target to preprocess a source file
-src/tools/Shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.i
-.PHONY : src/tools/Shader.cpp.i
-
-src/tools/Shader.s: src/tools/Shader.cpp.s
-
-.PHONY : src/tools/Shader.s
-
-# target to generate assembly for a file
-src/tools/Shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/Shader.cpp.s
-.PHONY : src/tools/Shader.cpp.s
-
-src/tools/Texture.o: src/tools/Texture.cpp.o
-
-.PHONY : src/tools/Texture.o
-
-# target to build an object file
-src/tools/Texture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.o
-.PHONY : src/tools/Texture.cpp.o
-
-src/tools/Texture.i: src/tools/Texture.cpp.i
-
-.PHONY : src/tools/Texture.i
-
-# target to preprocess a source file
-src/tools/Texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.i
-.PHONY : src/tools/Texture.cpp.i
-
-src/tools/Texture.s: src/tools/Texture.cpp.s
-
-.PHONY : src/tools/Texture.s
-
-# target to generate assembly for a file
-src/tools/Texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/Texture.cpp.s
-.PHONY : src/tools/Texture.cpp.s
-
-src/tools/Timer.o: src/tools/Timer.cpp.o
-
-.PHONY : src/tools/Timer.o
-
-# target to build an object file
-src/tools/Timer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.o
-.PHONY : src/tools/Timer.cpp.o
-
-src/tools/Timer.i: src/tools/Timer.cpp.i
-
-.PHONY : src/tools/Timer.i
-
-# target to preprocess a source file
-src/tools/Timer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.i
-.PHONY : src/tools/Timer.cpp.i
-
-src/tools/Timer.s: src/tools/Timer.cpp.s
-
-.PHONY : src/tools/Timer.s
-
-# target to generate assembly for a file
-src/tools/Timer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/tools/Timer.cpp.s
-.PHONY : src/tools/Timer.cpp.s
 
 # Help Target
 help:
@@ -670,27 +670,27 @@ help:
 	@echo "... src/Entity.o"
 	@echo "... src/Entity.i"
 	@echo "... src/Entity.s"
+	@echo "... src/MeshHelper.o"
+	@echo "... src/MeshHelper.i"
+	@echo "... src/MeshHelper.s"
 	@echo "... src/Renderer/Mesh.o"
 	@echo "... src/Renderer/Mesh.i"
 	@echo "... src/Renderer/Mesh.s"
 	@echo "... src/Renderer/Renderer.o"
 	@echo "... src/Renderer/Renderer.i"
 	@echo "... src/Renderer/Renderer.s"
+	@echo "... src/Shader.o"
+	@echo "... src/Shader.i"
+	@echo "... src/Shader.s"
+	@echo "... src/Texture.o"
+	@echo "... src/Texture.i"
+	@echo "... src/Texture.s"
+	@echo "... src/Timer.o"
+	@echo "... src/Timer.i"
+	@echo "... src/Timer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/tools/MeshHelper.o"
-	@echo "... src/tools/MeshHelper.i"
-	@echo "... src/tools/MeshHelper.s"
-	@echo "... src/tools/Shader.o"
-	@echo "... src/tools/Shader.i"
-	@echo "... src/tools/Shader.s"
-	@echo "... src/tools/Texture.o"
-	@echo "... src/tools/Texture.i"
-	@echo "... src/tools/Texture.s"
-	@echo "... src/tools/Timer.o"
-	@echo "... src/tools/Timer.i"
-	@echo "... src/tools/Timer.s"
 .PHONY : help
 
 
