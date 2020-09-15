@@ -385,6 +385,33 @@ external/implot/implot_items.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/external/implot/implot_items.cpp.s
 .PHONY : external/implot/implot_items.cpp.s
 
+src/Camera.o: src/Camera.cpp.o
+
+.PHONY : src/Camera.o
+
+# target to build an object file
+src/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.o
+.PHONY : src/Camera.cpp.o
+
+src/Camera.i: src/Camera.cpp.i
+
+.PHONY : src/Camera.i
+
+# target to preprocess a source file
+src/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.i
+.PHONY : src/Camera.cpp.i
+
+src/Camera.s: src/Camera.cpp.s
+
+.PHONY : src/Camera.s
+
+# target to generate assembly for a file
+src/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.s
+.PHONY : src/Camera.cpp.s
+
 src/Engine.o: src/Engine.cpp.o
 
 .PHONY : src/Engine.o
@@ -438,6 +465,33 @@ src/Entity.s: src/Entity.cpp.s
 src/Entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.s
 .PHONY : src/Entity.cpp.s
+
+src/Light.o: src/Light.cpp.o
+
+.PHONY : src/Light.o
+
+# target to build an object file
+src/Light.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o
+.PHONY : src/Light.cpp.o
+
+src/Light.i: src/Light.cpp.i
+
+.PHONY : src/Light.i
+
+# target to preprocess a source file
+src/Light.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Light.cpp.i
+.PHONY : src/Light.cpp.i
+
+src/Light.s: src/Light.cpp.s
+
+.PHONY : src/Light.s
+
+# target to generate assembly for a file
+src/Light.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Light.cpp.s
+.PHONY : src/Light.cpp.s
 
 src/MeshHelper.o: src/MeshHelper.cpp.o
 
@@ -664,12 +718,18 @@ help:
 	@echo "... external/implot/implot_items.o"
 	@echo "... external/implot/implot_items.i"
 	@echo "... external/implot/implot_items.s"
+	@echo "... src/Camera.o"
+	@echo "... src/Camera.i"
+	@echo "... src/Camera.s"
 	@echo "... src/Engine.o"
 	@echo "... src/Engine.i"
 	@echo "... src/Engine.s"
 	@echo "... src/Entity.o"
 	@echo "... src/Entity.i"
 	@echo "... src/Entity.s"
+	@echo "... src/Light.o"
+	@echo "... src/Light.i"
+	@echo "... src/Light.s"
 	@echo "... src/MeshHelper.o"
 	@echo "... src/MeshHelper.i"
 	@echo "... src/MeshHelper.s"

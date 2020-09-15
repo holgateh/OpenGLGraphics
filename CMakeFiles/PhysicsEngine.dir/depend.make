@@ -63,21 +63,31 @@ CMakeFiles/PhysicsEngine.dir/external/implot/implot_items.cpp.o: external/imgui/
 CMakeFiles/PhysicsEngine.dir/external/implot/implot_items.cpp.o: external/imgui/imgui_internal.h
 CMakeFiles/PhysicsEngine.dir/external/implot/implot_items.cpp.o: external/imgui/imstb_textedit.h
 
+CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.o: src/Camera.cpp
+CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.o: include/Camera.hpp
+CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.o: include/Entity.hpp
+CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.o: include/Material.hpp
+CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.o: include/Renderer/Mesh.hpp
+CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.o: include/Shader.hpp
+CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.o: include/Texture.hpp
+CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.o: include/Vertex.hpp
+
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: src/Engine.cpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: external/imgui/imconfig.h
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: external/imgui/imgui.h
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: external/imgui/imgui_impl_glfw.h
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: external/imgui/imgui_impl_opengl3.h
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: external/implot/implot.h
+CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Camera.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/CircularQueue.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Engine.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Entity.hpp
+CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Light.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Material.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Renderer/Renderer.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Shader.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Texture.hpp
-CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Timer.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Vertex.hpp
 
 CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: src/Entity.cpp
@@ -87,6 +97,15 @@ CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/Shader.hpp
 CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/Texture.hpp
 CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o: include/Vertex.hpp
+
+CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o: src/Light.cpp
+CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o: include/Entity.hpp
+CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o: include/Light.hpp
+CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o: include/Material.hpp
+CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o: include/Renderer/Mesh.hpp
+CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o: include/Shader.hpp
+CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o: include/Texture.hpp
+CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o: include/Vertex.hpp
 
 CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o: src/MeshHelper.cpp
 
@@ -101,7 +120,9 @@ CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: external/imgui/imgui.h
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: external/imgui/imgui_impl_glfw.h
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: external/imgui/imgui_impl_opengl3.h
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: external/implot/implot.h
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Camera.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Entity.hpp
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Light.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Material.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Renderer/Renderer.hpp
@@ -125,14 +146,15 @@ CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: external/imgui/imgui.h
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: external/imgui/imgui_impl_glfw.h
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: external/imgui/imgui_impl_opengl3.h
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: external/implot/implot.h
+CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Camera.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/CircularQueue.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Engine.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Entity.hpp
+CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Light.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Material.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Renderer/Renderer.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Shader.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Texture.hpp
-CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Timer.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Vertex.hpp
 

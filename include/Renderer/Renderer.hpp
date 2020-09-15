@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <memory>
+#include <string>
 
 // Include GLEW. Always include it before gl.h and glfw3.h, since it's a bit magic.
 #include <GL/glew.h>
@@ -33,35 +34,18 @@
 #include "Vertex.hpp"
 #include "Renderer/Mesh.hpp"
 #include "Entity.hpp"
+#include "Light.hpp"
+#include "Camera.hpp"
 
 
 
 class Renderer
 {
     private:
-        unsigned int transformLoc = 0;
-        unsigned int modelLoc = 0;
-        unsigned int viewLoc = 0;
-        unsigned int projectionLoc = 0;
-        unsigned int lightPosLoc = 0;
-        unsigned int materialDiffuseColorLoc = 0;
-        unsigned int materialAmbientColorLoc = 0;
-        unsigned int materialSpecularColorLoc = 0;
-        unsigned int lightColorLoc = 0;
-        unsigned int lightPowerLoc = 0;
-
-        glm::vec3 lightPos = {10.0f, 10.0f, 10.0f};
-        glm::vec3 lightColor = {1.0f, 1.0f, 1.0f};
-        float lightPower = 60.0f;
-
-        glm::vec3 materialDiffuseColor = {0.0, 1.0f, 0.0f};
-        glm::vec3 materialAmbientColor = {0.1f, 0.1f, 0.1f};
-        glm::vec3 materialSpecularColor = {1.0f, 1.0f, 1.0f};
-
         std::shared_ptr<std::vector<Entity>> entities;
-
-        Shader ourShader;
-        std::string SHADER_PATH = "data/shaders/";
+        std::shared_ptr<std::vector<Light>> lights;
+        std::shared_ptr<Camera> camera;
+        
 
         int width, height;
     
@@ -70,7 +54,8 @@ class Renderer
         glm::mat4 proj, model, view;
     private:
     public:
-        Renderer(GLFWwindow* window, float width, float height, std::shared_ptr<std::vector<Entity>>  entities);
+        Renderer(GLFWwindow* window, float width, float height, std::shared_ptr<std::vector<Entity>>  entities,
+        std::shared_ptr<std::vector<Light>> lights, std::shared_ptr<Camera> camrea);
         Renderer();
         void init();
         void startNewImGuiFrame();

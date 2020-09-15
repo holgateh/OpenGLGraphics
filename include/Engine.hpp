@@ -37,9 +37,9 @@
 
 #include "Shader.hpp"
 #include "Texture.hpp"
-#include "Timer.hpp"
 #include "CircularQueue.hpp"
 #include "Entity.hpp"
+#include "Camera.hpp"
 
 #include "Renderer/Renderer.hpp"
 
@@ -49,10 +49,14 @@ class Engine
         Renderer renderer;
         GLFWwindow* window;
 
-        Timer frameTimer, totalTimer;
-        double frameTime, totalTime, frameTimeMean, frameTimeMin = 100000.0, frameTimeMax;
+        double frameTime, totalTime, startTime, frameTimeMean, frameTimeMin = 100000.0, frameTimeMax;
         uint32_t frame = 0;
-        unsigned int frameCap = 0;
+
+        uint32_t sampleCount = 100;
+        double sampleTime = 0;
+        double framesPerSecond = 0;
+        unsigned int frameCap = 162;
+        double targetFrametime = 1.0 / frameCap;
 
         float deltaTime = 0.0f, lastFrame = 0.0f;
 
@@ -60,21 +64,14 @@ class Engine
 
         bool mouseEnabled = true;
 
-        const glm::vec3 initialFront = glm::vec3(0.0f, 0.0f, 1.0f);
-        const glm::vec3 initialUp = glm::vec3(0.0f, 1.0f, 0.0f);
-        const glm::vec3 initialRight = glm::vec3(1.0f, 0.0f, 0.0f);
-        float anglePitch = 0.0f, angleYaw = 0.0f;
-        //Camera stuff
-        glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
-        glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
-        glm::vec3 cameraFront = initialFront;
-        glm::vec3 cameraRight = initialRight;
-        glm::vec3 cameraUp = initialUp;
+
 
         // mouse pos
         double lastMouseX = 0.0, lastMouseY = 0.0;
 
         std::shared_ptr<std::vector<Entity>> entities;
+        std::shared_ptr<std::vector<Light>> lights;
+        std::shared_ptr<Camera> camera;
 
     public:
     private:

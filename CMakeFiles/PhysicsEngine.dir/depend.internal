@@ -63,6 +63,15 @@ CMakeFiles/PhysicsEngine.dir/external/implot/implot_items.cpp.o
  external/imgui/imgui.h
  external/imgui/imgui_internal.h
  external/imgui/imstb_textedit.h
+CMakeFiles/PhysicsEngine.dir/src/Camera.cpp.o
+ /home/harrison/Programming/PhysicsEngine/src/Camera.cpp
+ include/Camera.hpp
+ include/Entity.hpp
+ include/Material.hpp
+ include/Renderer/Mesh.hpp
+ include/Shader.hpp
+ include/Texture.hpp
+ include/Vertex.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o
  /home/harrison/Programming/PhysicsEngine/src/Engine.cpp
  external/imgui/imconfig.h
@@ -70,19 +79,29 @@ CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o
  external/imgui/imgui_impl_glfw.h
  external/imgui/imgui_impl_opengl3.h
  external/implot/implot.h
+ include/Camera.hpp
  include/CircularQueue.hpp
  include/Engine.hpp
  include/Entity.hpp
+ include/Light.hpp
  include/Material.hpp
  include/Renderer/Mesh.hpp
  include/Renderer/Renderer.hpp
  include/Shader.hpp
  include/Texture.hpp
- include/Timer.hpp
  include/Vertex.hpp
 CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o
  /home/harrison/Programming/PhysicsEngine/src/Entity.cpp
  include/Entity.hpp
+ include/Material.hpp
+ include/Renderer/Mesh.hpp
+ include/Shader.hpp
+ include/Texture.hpp
+ include/Vertex.hpp
+CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o
+ /home/harrison/Programming/PhysicsEngine/src/Light.cpp
+ include/Entity.hpp
+ include/Light.hpp
  include/Material.hpp
  include/Renderer/Mesh.hpp
  include/Shader.hpp
@@ -102,7 +121,9 @@ CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o
  external/imgui/imgui_impl_glfw.h
  external/imgui/imgui_impl_opengl3.h
  external/implot/implot.h
+ include/Camera.hpp
  include/Entity.hpp
+ include/Light.hpp
  include/Material.hpp
  include/Renderer/Mesh.hpp
  include/Renderer/Renderer.hpp
@@ -126,13 +147,14 @@ CMakeFiles/PhysicsEngine.dir/src/main.cpp.o
  external/imgui/imgui_impl_glfw.h
  external/imgui/imgui_impl_opengl3.h
  external/implot/implot.h
+ include/Camera.hpp
  include/CircularQueue.hpp
  include/Engine.hpp
  include/Entity.hpp
+ include/Light.hpp
  include/Material.hpp
  include/Renderer/Mesh.hpp
  include/Renderer/Renderer.hpp
  include/Shader.hpp
  include/Texture.hpp
- include/Timer.hpp
  include/Vertex.hpp

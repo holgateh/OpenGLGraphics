@@ -23,6 +23,6 @@ public:
         unsigned int ID;
         int width, height, numChannels;
 
-    Texture(const char* texturePath);
-    void bind();
+    Texture(std::string path);
+    void activate();
 };
