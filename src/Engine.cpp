@@ -317,7 +317,7 @@ Engine::Engine() : entities(std::make_shared<std::vector<Entity>>()),
         fprintf(stderr, "Failed to initialize GLEW\n");
 
     }
-    glfwSwapInterval(1);
+    glfwSwapInterval(0);
 
     // Ensure we can capture the escape key being pressed below
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);

@@ -55,7 +55,7 @@ class Engine
         uint32_t sampleCount = 100;
         double sampleTime = 0;
         double framesPerSecond = 0;
-        unsigned int frameCap = 162;
+        unsigned int frameCap = 0;
         double targetFrametime = 1.0 / frameCap;
 
         float deltaTime = 0.0f, lastFrame = 0.0f;

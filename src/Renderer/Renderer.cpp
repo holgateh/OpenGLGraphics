@@ -110,9 +110,6 @@ void Renderer::render()
         entity.shader.get()->setVec3("light.ambient", lights.get()->at(0).material.ambient);
         entity.shader.get()->setVec3("light.specular", lights.get()->at(0).material.specular);
         
-
-
-
         // Material stuff.
         //entity.shader.get()->setVec3("material.diffuse", entity.material.diffuse);
         //entity.shader.get()->setVec3("material.ambient", entity.material.ambient);
