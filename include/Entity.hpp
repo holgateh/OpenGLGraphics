@@ -33,7 +33,8 @@ class Entity
 
         std::shared_ptr<Mesh> mesh;
         std::shared_ptr<Shader> shader;
-        std::shared_ptr<Texture> texture;
+        std::shared_ptr<Texture> diffuse;
+        std::shared_ptr<Texture> specular;
         Material material;
 
         Type type;

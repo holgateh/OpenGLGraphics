@@ -44,6 +44,9 @@ Texture::Texture(std::string path)
 void Texture::activate()
 {
     glActiveTexture(GL_TEXTURE0 + ID);
+}
+
+void Texture::bind()
+{
     glBindTexture(GL_TEXTURE_2D, ID);
-    //std::cout << "texture [" << ID << "] has been bound.\n";
 }

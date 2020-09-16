@@ -25,4 +25,5 @@ public:
 
     Texture(std::string path);
     void activate();
+    void bind();
 };

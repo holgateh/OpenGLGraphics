@@ -352,6 +352,7 @@ Engine::Engine() : entities(std::make_shared<std::vector<Entity>>()),
     // Load texture:
     auto texture1 = std::make_shared<Texture>("data/textures/wall.jpg");
     auto texture2 = std::make_shared<Texture>("data/textures/diffuse.png");
+    auto textureSpecular = std::make_shared<Texture>("data/textures/specular.png");
 
     model1.mesh = std::make_shared<Mesh>("data/meshes/cube-smooth.obj");
 
@@ -367,9 +368,12 @@ Engine::Engine() : entities(std::make_shared<std::vector<Entity>>()),
     model1.shader = shaderModel;
     model2.shader = shaderModel;
     model3.shader = shaderModel;
-    model1.texture = texture2;
-    model2.texture = texture2;
-    model3.texture = texture1;
+    model1.diffuse = texture2;
+    model1.specular = textureSpecular;
+    model2.specular = textureSpecular;
+    model3.specular = textureSpecular;
+    model2.diffuse = texture2;
+    model3.diffuse = texture1;
 
 
     // setup light

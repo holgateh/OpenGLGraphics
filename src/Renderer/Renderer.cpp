@@ -120,9 +120,17 @@ void Renderer::render()
         entity.shader.get()->setFloat("material.shininess", entity.material.shininess);
         entity.shader.get()->setVec3("viewPos", camera.get()->pos);
 
-        
-        entity.shader.get()->setInt("material.diffuse", entity.texture.get()->ID);
-        entity.texture.get()->activate();
+
+        entity.diffuse.get()->activate();
+        entity.diffuse.get()->bind();
+
+        entity.specular.get()->activate();
+        entity.specular.get()->bind();
+
+        entity.shader.get()->setInt("material.diffuse", entity.diffuse.get()->ID);
+        entity.shader.get()->setInt("material.specular", entity.specular.get()->ID);
+        //entity.specular.get()->activate();
+
 
         glBindVertexArray(entity.mesh->VAO);
         //glDrawArrays(GL_TRIANGLES, 0, mesh.indices.size());
