@@ -7,15 +7,16 @@
 class Light : public Entity
 {
     private:
-
+       
     public:
-        glm::vec3 color = glm::vec3(1.0f, 1.0f, 1.0f);
-        float power = 1.0f;
-
+        glm::vec3 ambient, diffuse, specular;
+        float power = 15.0f;
     private:
     public:
-    Light();
-    Light(std::string ID);
+        Light();
+        Light(std::string ID);
+        void init();
+
 
     
 };

@@ -107,8 +107,6 @@ CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o: include/Shader.hpp
 CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o: include/Texture.hpp
 CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o: include/Vertex.hpp
 
-CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o: src/MeshHelper.cpp
-
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: src/Renderer/Mesh.cpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: external/tinyobjloader/tinyobjloader.h
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o: include/Renderer/Mesh.hpp

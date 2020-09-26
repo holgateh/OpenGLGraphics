@@ -12,16 +12,9 @@
 #include "Texture.hpp"
 #include "Material.hpp"
 
-enum class Type
-{
-    Light, Model
-};
-
-
-
 class Entity
 {
-    private:
+
     public:
         std::string ID;
 
@@ -31,18 +24,22 @@ class Entity
 
         glm::mat4 model = glm::mat4(1.0f);
 
+
+
+        // Visual stuff:
         std::shared_ptr<Mesh> mesh;
         std::shared_ptr<Shader> shader;
         std::shared_ptr<Texture> diffuse;
         std::shared_ptr<Texture> specular;
         Material material;
 
-        Type type;
+        // Visible toggle:
+        bool visible = true;
+
         
     private:
     public:
         Entity();
         Entity(std::string ID);
         void update();
-    
 };

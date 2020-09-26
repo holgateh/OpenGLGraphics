@@ -12,7 +12,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/Entity.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/Light.cpp.o"
-  "CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/Renderer/Mesh.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o"
   "CMakeFiles/PhysicsEngine.dir/src/Shader.cpp.o"

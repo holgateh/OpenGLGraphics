@@ -493,33 +493,6 @@ src/Light.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/Light.cpp.s
 .PHONY : src/Light.cpp.s
 
-src/MeshHelper.o: src/MeshHelper.cpp.o
-
-.PHONY : src/MeshHelper.o
-
-# target to build an object file
-src/MeshHelper.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.o
-.PHONY : src/MeshHelper.cpp.o
-
-src/MeshHelper.i: src/MeshHelper.cpp.i
-
-.PHONY : src/MeshHelper.i
-
-# target to preprocess a source file
-src/MeshHelper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.i
-.PHONY : src/MeshHelper.cpp.i
-
-src/MeshHelper.s: src/MeshHelper.cpp.s
-
-.PHONY : src/MeshHelper.s
-
-# target to generate assembly for a file
-src/MeshHelper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsEngine.dir/build.make CMakeFiles/PhysicsEngine.dir/src/MeshHelper.cpp.s
-.PHONY : src/MeshHelper.cpp.s
-
 src/Renderer/Mesh.o: src/Renderer/Mesh.cpp.o
 
 .PHONY : src/Renderer/Mesh.o
@@ -730,9 +703,6 @@ help:
 	@echo "... src/Light.o"
 	@echo "... src/Light.i"
 	@echo "... src/Light.s"
-	@echo "... src/MeshHelper.o"
-	@echo "... src/MeshHelper.i"
-	@echo "... src/MeshHelper.s"
 	@echo "... src/Renderer/Mesh.o"
 	@echo "... src/Renderer/Mesh.i"
 	@echo "... src/Renderer/Mesh.s"

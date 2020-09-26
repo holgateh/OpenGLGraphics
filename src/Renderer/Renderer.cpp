@@ -84,10 +84,9 @@ void Renderer::render()
         light.shader.get()->setMat4("model", light.model);
         light.shader.get()->setMat4("view", view);
         light.shader.get()->setMat4("projection", proj);
-        light.shader.get()->setVec3("light.color", lights.get()->at(0).color);
-        light.shader.get()->setVec3("light.ambient", lights.get()->at(0).material.ambient);
-        light.shader.get()->setVec3("light.diffuse", lights.get()->at(0).material.diffuse);
-        light.shader.get()->setVec3("light.specular", lights.get()->at(0).material.specular);
+        light.shader.get()->setVec3("light.ambient", light.ambient);
+        light.shader.get()->setVec3("light.diffuse", light.diffuse);
+        light.shader.get()->setVec3("light.specular", light.specular);
 
         glBindVertexArray(light.mesh->VAO);
         //glDrawArrays(GL_TRIANGLES, 0, mesh.indices.size());
@@ -102,18 +101,22 @@ void Renderer::render()
         entity.shader.get()->setMat4("model", entity.model);
         entity.shader.get()->setMat4("view", view);
         entity.shader.get()->setMat4("projection", proj);
+        
+        // Lights
+        int lightCount = lights.get()->size();
+        entity.shader.get()->setInt("lightCount", lightCount);
+        for (int i = 0; i < lightCount; i++)
+        {
+            entity.shader.get()->setVec3("lights[" + std::to_string(i) + "].pos", lights.get()->at(i).pos);
+            entity.shader.get()->setFloat("lights[" + std::to_string(i) + "].power", lights.get()->at(i).power);
+            entity.shader.get()->setVec3("lights[" + std::to_string(i) + "].diffuse", lights.get()->at(i).diffuse);
+            entity.shader.get()->setVec3("lights[" + std::to_string(i) + "].ambient", lights.get()->at(i).ambient);
+            entity.shader.get()->setVec3("lights[" + std::to_string(i) + "].specular", lights.get()->at(i).specular);
+        }
 
-        entity.shader.get()->setVec3("light.pos", lights.get()->at(0).pos);
-        entity.shader.get()->setVec3("light.color", lights.get()->at(0).color);
-        entity.shader.get()->setFloat("light.power", lights.get()->at(0).power);
-        entity.shader.get()->setVec3("light.diffuse", lights.get()->at(0).material.diffuse);
-        entity.shader.get()->setVec3("light.ambient", lights.get()->at(0).material.ambient);
-        entity.shader.get()->setVec3("light.specular", lights.get()->at(0).material.specular);
+
         
         // Material stuff.
-        //entity.shader.get()->setVec3("material.diffuse", entity.material.diffuse);
-        //entity.shader.get()->setVec3("material.ambient", entity.material.ambient);
-        entity.shader.get()->setVec3("material.specular", entity.material.specular);
         entity.shader.get()->setFloat("material.shininess", entity.material.shininess);
         entity.shader.get()->setVec3("viewPos", camera.get()->pos);
 
@@ -148,6 +151,11 @@ uint32_t Renderer::getNumVertices()
         sum += entity.mesh->vertices.size();
     }
 
+    for(auto& light : *(lights.get()))
+    {
+        sum += light.mesh->vertices.size();
+    }
+
     return sum;
 }
 
@@ -158,6 +166,12 @@ uint32_t Renderer::getNumTriangles()
     {
         sum += entity.mesh->indices.size();
     }
+
+    for(auto& light : *(lights.get()))
+    {
+        sum += light.mesh->vertices.size();
+    }
+
     return sum / 3;
 }
 

@@ -7,7 +7,6 @@ struct Material {
 
 struct Light {
     vec3 pos;
-    vec3 color;
     vec3 ambient;
     vec3 diffuse;
     vec3 specular;
@@ -22,31 +21,35 @@ in vec3 Normal;
 
 uniform float colour; // we set this variable in the OpenGL code.
 uniform Material material;
-uniform Light light;
+uniform Light lights[10];
+uniform int lightCount;
 uniform vec3 viewPos;
 
 void main()
 {
-
-    // ambient
-    vec3 ambient = light.ambient * vec3(texture(material.diffuse, TexCoords));
-  	
-    // diffuse 
-    vec3 norm = normalize(Normal);
-    vec3 lightDir = light.pos - FragPos;
-    vec3 nlightDir = normalize(lightDir); 
-    float diff = max(dot(norm, nlightDir), 0.0);
-    vec3 diffuse = light.diffuse * diff * vec3(texture(material.diffuse, TexCoords));  
-    
-    // specular
-    vec3 viewDir = normalize(viewPos - FragPos);
-    vec3 reflectDir = reflect(-nlightDir, norm);  
-    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
-    vec3 specular = light.specular * (spec * vec3(texture(material.specular, TexCoords)));  
-
-    //distance between
-    float d = length(lightDir);
+    for (int i = 0; i < lightCount; i++)
+    {
+        // ambient
+        vec3 ambient = lights[i].ambient * vec3(texture(material.diffuse, TexCoords));
         
-    vec3 result = ambient + light.power * (diffuse + specular) / (d * d);
-    FragColor = vec4(result, 1.0);
+        // diffuse 
+        vec3 norm = normalize(Normal);
+        vec3 lightDir = lights[i].pos - FragPos;
+        vec3 nlightDir = normalize(lightDir); 
+        float diff = max(dot(norm, nlightDir), 0.0);
+        vec3 diffuse = lights[i].diffuse * diff * vec3(texture(material.diffuse, TexCoords));  
+        
+        // specular
+        vec3 viewDir = normalize(viewPos - FragPos);
+        vec3 reflectDir = reflect(-nlightDir, norm);  
+        float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
+        vec3 specular = lights[i].specular * (spec * vec3(texture(material.specular, TexCoords)));  
+
+        //distance between
+        float d = length(lightDir);
+            
+        vec3 result = ambient + lights[i].power * (diffuse + specular) / (d * d);
+        FragColor = FragColor + vec4(result, 0.0);
+    }
+    FragColor = FragColor + vec4(0.0, 0.0, 0.0, 1.0);
 }

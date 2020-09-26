@@ -127,21 +127,6 @@ void Engine::updateUI()
     for(auto& entity : *(entities.get()))
     {
         ImGui::Begin(("Material Control: " + entity.ID).c_str());
-        ImGui::Text("Material Diffuse Color: ");
-        ImGui::SliderFloat("r##1", &entity.material.diffuse.x, 0.0f, 1.0f, "%.1f");
-        ImGui::SliderFloat("g##1", &entity.material.diffuse.y, 0.0f, 1.0f, "%.1f");
-        ImGui::SliderFloat("b##1", &entity.material.diffuse.z, 0.0f, 1.0f, "%.1f");;
-        ImGui::Separator();
-        ImGui::Text("Material Ambient Color: ");
-        ImGui::SliderFloat("r##2", &entity.material.ambient.x, 0.0f, 1.0f, "%.1f");
-        ImGui::SliderFloat("g##2", &entity.material.ambient.y, 0.0f, 1.0f, "%.1f");
-        ImGui::SliderFloat("b##2", &entity.material.ambient.z, 0.0f, 1.0f, "%.1f");
-        ImGui::Separator();
-        ImGui::Text("Material Specular Color: ");
-        ImGui::SliderFloat("r##3", &entity.material.specular.x, 0.0f, 1.0f, "%.1f");
-        ImGui::SliderFloat("g##3", &entity.material.specular.y, 0.0f, 1.0f, "%.1f");
-        ImGui::SliderFloat("b##3", &entity.material.specular.z, 0.0f, 1.0f, "%.1f");
-        ImGui::Separator();
         ImGui::InputFloat("shininess", &entity.material.shininess, 0.0f, 100.0f, "%f");
         ImGui::End();
 
@@ -158,36 +143,33 @@ void Engine::updateUI()
     }
 
 
-    // light control
-    ImGui::Begin("Light Control");
-    ImGui::Text("Light Position: ");
-    ImGui::InputFloat("x", &lights.get()->at(0).pos.x, 0.0f, 0.0f, "%f");
-    ImGui::InputFloat("y", &lights.get()->at(0).pos.y, 0.0f, 0.0f, "%f");
-    ImGui::InputFloat("z", &lights.get()->at(0).pos.z, 0.0f, 0.0f, "%f");
-    ImGui::Separator();
-    ImGui::Text("Light Color: ");
-    ImGui::SliderFloat("r", &lights.get()->at(0).color.x, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("g", &lights.get()->at(0).color.y, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("b", &lights.get()->at(0).color.z, 0.0f, 1.0f, "%.1f");
-    ImGui::Separator();
-    ImGui::Text("Light Ambient Color: ");
-    ImGui::SliderFloat("r##2", &lights.get()->at(0).material.ambient.x, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("g##2", &lights.get()->at(0).material.ambient.y, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("b##2", &lights.get()->at(0).material.ambient.z, 0.0f, 1.0f, "%.1f");
-    ImGui::Text("Light Diffuse Color: ");
-    ImGui::SliderFloat("r##3", &lights.get()->at(0).material.diffuse.x, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("g##3", &lights.get()->at(0).material.diffuse.y, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("b##3", &lights.get()->at(0).material.diffuse.z, 0.0f, 1.0f, "%.1f");
-    ImGui::Separator();
-    ImGui::Text("Light Specular Color: ");
-    ImGui::SliderFloat("r##4", &lights.get()->at(0).material.specular.x, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("g##4", &lights.get()->at(0).material.specular.y, 0.0f, 1.0f, "%.1f");
-    ImGui::SliderFloat("b##4", &lights.get()->at(0).material.specular.z, 0.0f, 1.0f, "%.1f");
-    ImGui::Separator();
-    ImGui::InputFloat("Power ", &lights.get()->at(0).power, 0.0f, 0.0f, "%f");
-    ImGui::Separator();
-    ImGui::End();
-
+    for(auto& light: *(lights.get()))
+    {
+        // light control
+        ImGui::Begin(("Light Control: " + light.ID).c_str());
+        ImGui::Text("Light Position: ");
+        ImGui::InputFloat("x", &light.pos.x, 0.0f, 0.0f, "%f");
+        ImGui::InputFloat("y", &light.pos.y, 0.0f, 0.0f, "%f");
+        ImGui::InputFloat("z", &light.pos.z, 0.0f, 0.0f, "%f");
+        ImGui::Separator();
+        ImGui::Text("Light Ambient Color: ");
+        ImGui::SliderFloat("r##2", &light.ambient.x, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("g##2", &light.ambient.y, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("b##2", &light.ambient.z, 0.0f, 1.0f, "%.1f");
+        ImGui::Text("Light Diffuse Color: ");
+        ImGui::SliderFloat("r##3", &light.diffuse.x, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("g##3", &light.diffuse.y, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("b##3", &light.diffuse.z, 0.0f, 1.0f, "%.1f");
+        ImGui::Separator();
+        ImGui::Text("Light Specular Color: ");
+        ImGui::SliderFloat("r##4", &light.specular.x, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("g##4", &light.specular.y, 0.0f, 1.0f, "%.1f");
+        ImGui::SliderFloat("b##4", &light.specular.z, 0.0f, 1.0f, "%.1f");
+        ImGui::Separator();
+        ImGui::InputFloat("Power ", &light.power, 0.0f, 0.0f, "%f");
+        ImGui::Separator();
+        ImGui::End();
+    }
     
 }
 
@@ -210,8 +192,17 @@ void Engine::update()
 
     for(auto& light : *(lights.get()))
     {
-        light.pos = glm::vec3(10*sin(totalTime), 10, 10*cos(totalTime));
-        light.update();
+        if(light.ID == "light")
+        {        
+            light.pos = glm::vec3(10*sin(totalTime), 10, 10*cos(totalTime));
+            light.update();
+        }
+
+        if(light.ID == "light2")
+        {        
+            light.pos = glm::vec3(-10*sin(totalTime), 10, -10*cos(totalTime));
+            light.update();
+        }
     }
 
 }
@@ -384,6 +375,11 @@ Engine::Engine() : entities(std::make_shared<std::vector<Entity>>()),
     light.pos = glm::vec3(10.0f, 10.0f, 10.0f);
     light.shader = shaderLight;
 
+    auto light2 = Light("light2");
+    light2.mesh = light.mesh;
+    light2.pos = glm::vec3(10.0f, 15.0f, 10.0f);
+    light2.shader = shaderLight;
+
     //Set camera position.
     camera.get()->pos = glm::vec3(0.0f, 10.0f, 0.0f);
 
@@ -391,6 +387,7 @@ Engine::Engine() : entities(std::make_shared<std::vector<Entity>>()),
 
 
     lights->push_back(std::move(light));
+    lights->push_back(std::move(light2));
 
     entities->push_back(std::move(model1));
     entities->push_back(std::move(model2));

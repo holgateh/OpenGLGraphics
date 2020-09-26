@@ -10,12 +10,6 @@
 Engine.hpp
 /home/harrison/Programming/PhysicsEngine/src/Engine.hpp
 
-/home/harrison/Programming/PhysicsEngine/src/main.cpp
-iostream
--
-Engine.hpp
-/home/harrison/Programming/PhysicsEngine/src/Engine.hpp
-
 external/imgui/imconfig.h
 
 external/imgui/imgui.h
