@@ -83,6 +83,7 @@ CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/CircularQueue.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Engine.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Entity.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Light.hpp
+CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/ListItem.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Material.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/Engine.cpp.o: include/Renderer/Renderer.hpp
@@ -121,6 +122,7 @@ CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: external/implot/implot
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Camera.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Entity.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Light.hpp
+CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/ListItem.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Material.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/Renderer/Renderer.cpp.o: include/Renderer/Renderer.hpp
@@ -149,6 +151,7 @@ CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/CircularQueue.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Engine.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Entity.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Light.hpp
+CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/ListItem.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Material.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Renderer/Mesh.hpp
 CMakeFiles/PhysicsEngine.dir/src/main.cpp.o: include/Renderer/Renderer.hpp

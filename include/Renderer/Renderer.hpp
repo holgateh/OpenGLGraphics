@@ -36,8 +36,7 @@
 #include "Entity.hpp"
 #include "Light.hpp"
 #include "Camera.hpp"
-
-
+#include "ListItem.hpp"
 
 class Renderer
 {
@@ -52,10 +51,15 @@ class Renderer
     public:
         GLFWwindow* window;
         glm::mat4 proj, model, view;
+
+        // Renderer mode stuff:
+        std::vector<ListItem> modes = {{"NORMAL", false} , {"WIREFRAME", false}};
+        int currentMode = 0;
+        
     private:
     public:
         Renderer(GLFWwindow* window, float width, float height, std::shared_ptr<std::vector<Entity>>  entities,
-        std::shared_ptr<std::vector<Light>> lights, std::shared_ptr<Camera> camrea);
+                 std::shared_ptr<std::vector<Light>> lights, std::shared_ptr<Camera> camera);
         Renderer();
         void init();
         void startNewImGuiFrame();

@@ -73,6 +73,7 @@ class Engine
         std::shared_ptr<std::vector<Light>> lights;
         std::shared_ptr<Camera> camera;
 
+
     public:
     private:
 

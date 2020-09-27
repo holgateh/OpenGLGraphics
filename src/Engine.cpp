@@ -170,6 +170,27 @@ void Engine::updateUI()
         ImGui::Separator();
         ImGui::End();
     }
+
+
+        ImGui::Begin("Renderer Control");
+        ImGui::Text(("Current mode: " + renderer.modes[renderer.currentMode].name).c_str());
+        ImGui::Separator();
+        ImGui::ListBoxHeader("Modes:");
+        for (int i = 0; i < renderer.modes.size(); i++)
+        {
+            std::string& itemName = renderer.modes[i].name;
+            if (ImGui::Selectable(itemName.c_str(), renderer.modes[i].isSelected))
+            {
+                if(renderer.currentMode != i)
+                {
+                    renderer.currentMode = i;
+                    std::cout << i << "\n";
+                }
+            }
+        }
+        ImGui::ListBoxFooter();
+        ImGui::Separator();
+        ImGui::End();
     
 }
 
@@ -340,30 +361,39 @@ Engine::Engine() : entities(std::make_shared<std::vector<Entity>>()),
     
     auto shaderModel = std::make_shared<Shader>("data/shaders/vert.sh", "data/shaders/frag.sh");
 
-    // Load texture:
-    auto texture1 = std::make_shared<Texture>("data/textures/wall.jpg");
+    // Load textures:
+    auto texture1 = std::make_shared<Texture>("data/textures/default-diffuse.png");
     auto texture2 = std::make_shared<Texture>("data/textures/diffuse.png");
-    auto textureSpecular = std::make_shared<Texture>("data/textures/specular.png");
-
+    auto textureSpecular1 = std::make_shared<Texture>("data/textures/specular.png");
+    auto textureSpecular2 = std::make_shared<Texture>("data/texture/default-specular.png");
+    // Load meshes:
     model1.mesh = std::make_shared<Mesh>("data/meshes/cube-smooth.obj");
-
-
     model2.mesh = std::make_shared<Mesh>("data/meshes/platform.obj");
     model3.mesh = std::make_shared<Mesh>("data/meshes/torus.obj");
+    
+    // Buffer meshes:
     model1.mesh->bufferMesh();
     model2.mesh->bufferMesh();
     model3.mesh->bufferMesh();
+    
+    // Set Initial Positions:
     model1.pos = glm::vec3(0.0f, 5.0f, 0.0f);
     model2.pos = glm::vec3(0.0f, -3.0f, 0.0f);
     model3 .pos = glm::vec3(-5.0f, 5.0f, 0.0f);
+    
+    // Set Shader:
     model1.shader = shaderModel;
     model2.shader = shaderModel;
     model3.shader = shaderModel;
+    
+    // Set Speculars:
+    model1.specular = textureSpecular1;
+    model2.specular = textureSpecular2;
+    model3.specular = textureSpecular2;
+    
+    // Set diffuse:
     model1.diffuse = texture2;
-    model1.specular = textureSpecular;
-    model2.specular = textureSpecular;
-    model3.specular = textureSpecular;
-    model2.diffuse = texture2;
+    model2.diffuse = texture1;
     model3.diffuse = texture1;
 
 

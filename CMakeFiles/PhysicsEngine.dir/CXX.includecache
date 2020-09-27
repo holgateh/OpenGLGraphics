@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/harrison/Programming/PhysicsEngine/src/Engine.cpp
-Engine.hpp
-/home/harrison/Programming/PhysicsEngine/src/Engine.hpp
+/home/harrison/Programming/PhysicsEngine/src/Renderer/Renderer.cpp
+Renderer/Renderer.hpp
+/home/harrison/Programming/PhysicsEngine/src/Renderer/Renderer/Renderer.hpp
 
 external/imgui/imconfig.h
 
@@ -48,68 +48,6 @@ include/Camera.hpp
 Entity.hpp
 include/Entity.hpp
 
-include/CircularQueue.hpp
-vector
--
-iostream
--
-
-include/Engine.hpp
-stdio.h
--
-stdlib.h
--
-math.h
--
-thread
--
-chrono
--
-memory
--
-fstream
--
-iostream
--
-vector
--
-queue
--
-sstream
--
-GL/glew.h
--
-GLFW/glfw3.h
--
-GL/gl.h
--
-glm/glm.hpp
--
-glm/gtc/matrix_transform.hpp
--
-glm/gtc/type_ptr.hpp
--
-imgui.h
-include/imgui.h
-imgui_impl_glfw.h
-include/imgui_impl_glfw.h
-imgui_impl_opengl3.h
-include/imgui_impl_opengl3.h
-implot.h
-include/implot.h
-Shader.hpp
-include/Shader.hpp
-Texture.hpp
-include/Texture.hpp
-CircularQueue.hpp
-include/CircularQueue.hpp
-Entity.hpp
-include/Entity.hpp
-Camera.hpp
-include/Camera.hpp
-Renderer/Renderer.hpp
-include/Renderer/Renderer.hpp
-
 include/Entity.hpp
 vector
 -
@@ -134,6 +72,10 @@ include/Light.hpp
 Entity.hpp
 include/Entity.hpp
 glm/glm.hpp
+-
+
+include/ListItem.hpp
+string
 -
 
 include/Material.hpp
@@ -209,6 +151,8 @@ Light.hpp
 include/Renderer/Light.hpp
 Camera.hpp
 include/Renderer/Camera.hpp
+ListItem.hpp
+include/Renderer/ListItem.hpp
 
 include/Shader.hpp
 GL/glew.h

@@ -134,7 +134,15 @@ void Renderer::render()
 
         glBindVertexArray(entity.mesh->VAO);
         //glDrawArrays(GL_TRIANGLES, 0, mesh.indices.size());
-
+        
+        if (modes[currentMode].name == "NORMAL")
+        {
+            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        }
+        else if (modes[currentMode].name == "WIREFRAME")
+        {
+            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        }
         glDrawElements(GL_TRIANGLES, entity.mesh->indices.size(), GL_UNSIGNED_INT, 0);
     }
 
