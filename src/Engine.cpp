@@ -405,7 +405,7 @@ Engine::Engine() : entities(std::make_shared<std::vector<Entity>>()),
     light.pos = glm::vec3(10.0f, 10.0f, 10.0f);
     light.shader = shaderLight;
 
-    auto light2 = Light("light2");
+    auto light2 = Light("light2", LightType::DIRECTIONAL);
     light2.mesh = light.mesh;
     light2.pos = glm::vec3(10.0f, 15.0f, 10.0f);
     light2.shader = shaderLight;

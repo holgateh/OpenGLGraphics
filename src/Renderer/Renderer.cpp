@@ -88,6 +88,9 @@ void Renderer::render()
         light.shader.get()->setVec3("light.diffuse", light.diffuse);
         light.shader.get()->setVec3("light.specular", light.specular);
 
+        
+
+
         glBindVertexArray(light.mesh->VAO);
         //glDrawArrays(GL_TRIANGLES, 0, mesh.indices.size());
 
@@ -112,12 +115,27 @@ void Renderer::render()
             entity.shader.get()->setVec3("lights[" + std::to_string(i) + "].diffuse", lights.get()->at(i).diffuse);
             entity.shader.get()->setVec3("lights[" + std::to_string(i) + "].ambient", lights.get()->at(i).ambient);
             entity.shader.get()->setVec3("lights[" + std::to_string(i) + "].specular", lights.get()->at(i).specular);
+            entity.shader.get()->setInt("lights[" + std::to_string(i) + "].type", static_cast<int>(lights.get()->at(i).type));
+
+            switch(lights.get()->at(i).type)
+            {
+                case LightType::POINT:
+                    break;
+                case LightType::DIRECTIONAL:
+                    entity.shader.get()->setVec3("lights[" + std::to_string(i) + "].direction", lights.get()->at(i).direction);
+                    entity.shader.get()->setFloat("lights[" + std::to_string(i) + "].angle", lights.get()->at(i).angle);
+                    break;
+                default:
+                    break;
+            }
         }
 
 
         
         // Material stuff.
         entity.shader.get()->setFloat("material.shininess", entity.material.shininess);
+
+        // Pass camera position to the shader.
         entity.shader.get()->setVec3("viewPos", camera.get()->pos);
 
 

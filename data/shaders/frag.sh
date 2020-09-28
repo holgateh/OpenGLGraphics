@@ -1,16 +1,22 @@
 #version 330 core
-struct Material {
+struct Material 
+{
     sampler2D diffuse;
     sampler2D specular;
     float shininess;
 }; 
 
-struct Light {
+struct Light 
+{
     vec3 pos;
     vec3 ambient;
     vec3 diffuse;
     vec3 specular;
+    int type; // 0 = point light. 1 = directional;
     float power;
+    // only used if directional
+    vec3 direction;
+    float angle; // the angle between the principal axis of the cone and its slope.
 };
 
 out vec4 FragColor;  
@@ -29,27 +35,33 @@ void main()
 {
     for (int i = 0; i < lightCount; i++)
     {
-        // ambient
-        vec3 ambient = lights[i].ambient * vec3(texture(material.diffuse, TexCoords));
-        
-        // diffuse 
-        vec3 norm = normalize(Normal);
-        vec3 lightDir = lights[i].pos - FragPos;
-        vec3 nlightDir = normalize(lightDir); 
-        float diff = max(dot(norm, nlightDir), 0.0);
-        vec3 diffuse = lights[i].diffuse * diff * vec3(texture(material.diffuse, TexCoords));  
-        
-        // specular
-        vec3 viewDir = normalize(viewPos - FragPos);
-        vec3 reflectDir = reflect(-nlightDir, norm);  
-        float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
-        vec3 specular = lights[i].specular * (spec * vec3(texture(material.specular, TexCoords)));  
+        vec3 fragToLight = normalize(FragPos - lights[i].pos);
+        float angle = acos(dot(fragToLight, lights[i].direction));
 
-        //distance between
-        float d = length(lightDir);
+        if(lights[i].type == 0 || angle < lights[i].angle)
+        {
+            // ambient
+            vec3 ambient = lights[i].ambient * vec3(texture(material.diffuse, TexCoords));
             
-        vec3 result = ambient + lights[i].power * (diffuse + specular) / (d * d);
-        FragColor = FragColor + vec4(result, 0.0);
+            // diffuse 
+            vec3 norm = normalize(Normal);
+            vec3 lightDir = lights[i].pos - FragPos;
+            vec3 nlightDir = normalize(lightDir); 
+            float diff = max(dot(norm, nlightDir), 0.0);
+            vec3 diffuse = lights[i].diffuse * diff * vec3(texture(material.diffuse, TexCoords));  
+            
+            // specular
+            vec3 viewDir = normalize(viewPos - FragPos);
+            vec3 reflectDir = reflect(-nlightDir, norm);  
+            float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
+            vec3 specular = lights[i].specular * (spec * vec3(texture(material.specular, TexCoords)));  
+
+            //distance between
+            float d = length(lightDir);
+                
+            vec3 result = ambient + lights[i].power * (diffuse + specular) / (d * d);
+            FragColor = FragColor + vec4(result, 0.0);
+        }
     }
     FragColor = FragColor + vec4(0.0, 0.0, 0.0, 1.0);
 }
