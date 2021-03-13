@@ -7,7 +7,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "Renderer/Mesh.hpp"
+#include "RenderingEngine/Mesh.hpp"
+
 #include "Shader.hpp"
 #include "Texture.hpp"
 #include "Material.hpp"

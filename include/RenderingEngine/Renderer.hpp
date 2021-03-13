@@ -1,6 +1,4 @@
 #pragma once
-#include "Renderer/Mesh.hpp"
-
 #include <vector>
 #include <memory>
 #include <string>
@@ -29,10 +27,11 @@
 // Implot
 #include "implot.h"
 
+#include "RenderingEngine/Mesh.hpp"
+
 #include "Shader.hpp"
 #include "Texture.hpp"
 #include "Vertex.hpp"
-#include "Renderer/Mesh.hpp"
 #include "Entity.hpp"
 #include "Light.hpp"
 #include "Camera.hpp"

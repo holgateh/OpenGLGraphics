@@ -35,13 +35,14 @@
 #include "implot.h"
 
 
+#include "RenderingEngine/Renderer.hpp"
+
 #include "Shader.hpp"
 #include "Texture.hpp"
 #include "CircularQueue.hpp"
 #include "Entity.hpp"
 #include "Camera.hpp"
 
-#include "Renderer/Renderer.hpp"
 
 class Engine
 {
